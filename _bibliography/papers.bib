@@ -1,0 +1,186 @@
+---
+---
+
+@string{aps = {American Physical Society,}}
+
+@article{fantasticstyles,
+  abbr={WACV},
+  title={Fantastic Style Channels and Where to Find Them: A Submodular Framework for Discovering Diverse Directions in GANs},
+  author={Enis Simsar and Umut Kocasari and Ezgi Gulperi Er and Pinar Yanardag},
+  abstract={The discovery of interpretable directions in the latent spaces of pre-trained GAN models has recently become a popular topic. In particular, StyleGAN2 has enabled various image generation and manipulation tasks due to its rich and disentangled latent spaces. The discovery of such directions is typically done either in a supervised manner, which requires annotated data for each desired manipulation, or in an unsupervised manner, which requires a manual effort to identify the directions. As a result, existing work typically finds only a handful of directions in which controllable edits can be made. In this paper, we attempt to find the most representative and diverse subset of directions in stylespace of StyleGAN2. We formulate the problem as a coverage of stylespace and propose a novel submodular optimization framework that can be solved efficiently with a greedy optimization scheme. We evaluate our framework with qualitative and quantitative experiments and show that our method finds more diverse and relevant channels.},
+  booktitle={Winter Conference on Applications of Computer Vision (WACV)},
+  journal={Winter Conference on Applications of Computer Vision},
+  pages={1365--1374},
+  year={2023},
+  month={March},
+  teaser={teaser_fantastic.jpeg},
+  pdf={https://arxiv.org/abs/2203.08516},
+  website={/fantasticstyles},
+  selected={true}
+}
+ 
+
+@article{latent3D,
+  abbr={WACV},
+  title={Text and Image Guided 3D Avatar Generation and Manipulation},
+  author={Zehranaz Canfes* and Furkan Atasoy* and Alara Dirik* and Pinar Yanardag},
+  abstract={The manipulation of latent space has recently become an interesting topic in the field of generative models. Recent research shows that latent directions can be used to manipulate images towards certain attributes. However, controlling the generation process of 3D generative models remains a challenge. In this work, we propose a novel 3D manipulation method that can manipulate both the shape and texture of the model using text or image-based prompts such as 'a young face' or  'a surprised face'. We leverage the power of  Contrastive Language-Image Pre-training (CLIP) model and a pre-trained 3D GAN model designed to generate face avatars, and create a fully differentiable rendering pipeline to manipulate meshes. More specifically, our method takes an input latent code and modifies it such that the target attribute specified by a text or image prompt is present or enhanced, while leaving other attributes largely unaffected. Our method requires only 5 minutes per manipulation, and we demonstrate the effectiveness of our approach with extensive results and comparisons. },
+  booktitle={Winter Conference on Applications of Computer Vision (WACV)},
+  journal={Winter Conference on Applications of Computer Vision},
+  pages={1365--1374},
+  year={2023},
+  month={January},
+  teaser={teaser_latent3D.jpeg},
+  pdf={https://arxiv.org/abs/2202.06079},
+  website={/latent3D},
+  selected={true}
+}
+
+@article{fairstyle,
+  abbr={ECCV},
+  title={FairStyle: Debiasing StyleGAN2 with Style Channel Manipulations},
+  author={Cemre Efe Karakas* and Alara Dirik* and Eylul Yalcinkaya and Pinar Yanardag},
+  abstract={Recent advances in generative adversarial networks have shown that it is possible to generate high-resolution and hyperrealistic images. However, the images produced by GANs are only as fair and representative as the datasets on which they are trained. In this paper, we propose a method for directly modifying a pre-trained StyleGAN2 model that can be used to generate a balanced set of images with respect to one (e.g., eyeglasses) or more attributes (e.g.,  gender and eyeglasses). Our method takes advantage of the style space of the StyleGAN2 model to perform disentangled control of the target attributes to be debiased. Our method does not require training additional models and directly debiases the GAN model, paving the way for its use in various downstream applications. Our experiments show that our method successfully debiases the GAN model within a few minutes without compromising the quality of the generated images.  },
+  booktitle={European Conference on Computer Vision (ECCV)},
+  journal={European Conference on Computer Vision},
+  pages={1365--1374},
+  year={2022},
+  month={January},
+  teaser={teaser_fairstyle.png},
+  pdf={https://arxiv.org/abs/2202.06240},
+  website={/fairstyle},
+  selected={true}
+}
+
+@article{paintinstyle,
+  abbr={CVPR Workshop},
+  title={PaintInStyle: One-Shot Discovery of Interpretable Directions by Painting},
+  author={Berkay Doner* and Elif Sema Balcioglu* and Merve Rabia Barin* and Umut Kocasari and Mert Tiftikci and Pinar Yanardag},
+  abstract={The search for interpretable directions in latent spaces of pre-trained Generative Adversarial Networks (GANs) has become a topic of interest. These directions can be utilized to perform semantic manipulations on the GAN generated images. The discovery of such directions is performed either in a supervised way, which requires manual annotation or pre-trained classifiers, or in an unsupervised way, which requires the user to interpret what these directions represent. Our goal in this work is to find meaningful latent space directions that can be used to manipulate images in a one-shot manner where the user provides a simple drawing (such as drawing a beard or painting a red lipstick) using basic image editing tools. Our method then finds a direction that can be applied to any latent vector to perform the desired edit. We demonstrate that our method is able to find several distinct and fine-grained directions in a variety of datasets.},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal={Conference on Computer Vision and Pattern Recognition},
+  pages={1365--1374},
+  year={2022},
+  month={January},
+  teaser={teaser_paintinstyle.png},
+  website={/paintinstyle},
+  preprint={true}
+}
+
+@article{rankinstyle,
+  abbr={CVPR Workshop},
+  title={Rank in Style: A Ranking-based Approach to Find Interpretable Directions},
+  author={Umut Kocasari and Kerem Zaman and Mert Tiftikci and Enis Simsar and Pinar Yanardag},
+  abstract={Recent work such as StyleCLIP aims to harness the power of CLIP embeddings for controlled manipulations. Although these models are capable of manipulating images based on a text prompt, the success of the manipulation often depends on careful selection of the appropriate text for the desired manipulation. This limitation makes it particularly difficult to perform text-based manipulations in domains where the user lacks expertise, such as fashion. To address this problem, we propose a method for automatically determining the most successful and relevant text-based edits using a pre-trained StyleGAN model. Our approach consists of a novel mechanism that uses CLIP to guide beam-search decoding, and a ranking method that identifies the most relevant and successful edits based on a list of keywords. We also demonstrate the capabilities of our framework in several domains, including fashion.},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal={Conference on Computer Vision and Pattern Recognition},
+  pages={1365--1374},
+  year={2022},
+  month={January},
+  teaser={teaser_rankinstyle.jpeg},
+  website={/paintinstyle},
+  preprint={true}
+}
+
+
+@article{midispace,
+  abbr={ACM CC},
+  title={MIDISpace: Finding Linear Directions in Latent Space for Music Generation (Honorable Mention Award)},
+  author={Meliksah Turker and Alara Dirik and Pinar Yanardag},
+  abstract={While recent works have shown that it is possible to find disentangled directions in the latent space of image generation networks, finding directions in the latent space of sequential models for music generation remains a largely unexplored topic. In this work, we propose a method for discovering linear directions in the latent space of a music generating Variational Auto-Encoder (VAE). We use PCA, a statistical method to transform the input data such that the variation along the new axes is maximized. We apply PCA on the latent space activations of our model and find largely disentangled directions that change the style and characteristics of the input music. Our experiments show that the found directions are often monotonic, global and encode fundamental musical characteristics such as colorfulness, speed and repetitiveness. Moreover, we propose a set of quantitative metrics to describe different musical styles and characteristics to evaluate our results. We show that the found directions decouple content and can be utilized for style transfer and conditional music generation tasks.},
+  booktitle={ACM Creativity & Cognition (ACM C&C)},
+  journal={ACM Creativity & Cognition},
+  pages={1365--1374},
+  year={2022},
+  month={January},
+  teaser={teaser_midispace.png},
+  website={/midispace},
+  selected={true}
+}
+
+@article{stylemc,
+  abbr={WACV},
+  title={StyleMC: Multi-Channel Based Fast Text-Guided Image Generation and Manipulation},
+  author={Umut Kocasari and Alara Dirik and Mert Tiftikci and Pinar Yanardag},
+  abstract={Pre-trained GANs have shown great potential for interpretable directions in the latent space. The discovery of such directions is often done in a supervised or self-supervised manner and requires manual annotations which limits their application in practice. On the other hand, unsupervised approaches provide a way to discover interpretable directions without any supervision, but no fine-grained attribute can be discovered. Recent work such as StyleCLIP aims to overcome this limitation by leveraging the power of CLIP, a joint representational model for text and images, for text-driven image manipulation. While promising, these methods take several hours of pre-processing or training time, and require multiple text prompts. In this work, we propose a fast and efficient method for text-guided image generation and manipulation by leveraging the power of StyleGAN2 and CLIP. Our method uses a CLIP-based loss and an identity loss to manipulate images via user-supplied text prompts without changing any of the irrelevant attributes. Unlike previous work, our method requires only 12 seconds of optimization per text prompt and can be used with any pre-trained StyleGAN2 model. We demonstrate the effectiveness of our method with extensive results and comparisons to state-of-the-art approaches.},
+  booktitle={Winter Conference on Applications of Computer Vision (WACV)},
+  journal={Winter Conference on Applications of Computer Vision},
+  pages={1365--1374},
+  year={2022},
+  month={July},
+  pdf={https://arxiv.org/abs/2112.08493},
+  teaser={teaser_cat_stylemc.png},
+  code={https://github.com/catlab-team/stylemc},
+  website={/stylemc},
+  selected={true}
+  }
+
+
+@article{latentclr,
+  abbr={ICCV},
+  title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
+  author={Yuksel*, Oguz Kaan and Simsar*, Enis and Er,Ezgi Gulperi and Yanardag, Pinar},
+  abstract={Recent research has shown great potential for finding interpretable directions in the latent spaces of pre-trained Generative Adversarial Networks (GANs). These directions provide controllable generation and support a wide range of semantic editing operations such as zoom or rotation. The discovery of such directions is often performed in a supervised or semi-supervised fashion and requires manual annotations,  limiting their applications in practice. In comparison, unsupervised discovery enables finding subtle directions a priori hard to recognize. In this work, we propose a contrastive-learning-based approach for discovering semantic directions in the latent space of pretrained GANs in a self-supervised manner. Our approach finds semantically meaningful dimensions compatible with state-of-the-art methods.},
+  booktitle={International Conference on Computer Vision (ICCV)},
+  journal={International Conference on Computer Vision},
+  pages={1365--1374},
+  year={2021},
+  month={July},
+  pdf={https://arxiv.org/abs/2104.00820},
+  code={https://github.com/catlab-team/latentclr},
+  website={/latentclr},
+  teaser={teaser_cat_latentclr.png},
+  selected={true}
+}
+
+
+@article{theatergan,
+  abbr={NeurIPS Workshop},
+  title={Controlled Cue Generation for Play Scripts (Best Paper Award)},
+  author={Alara Dirik* and Hilal Donmez* and Pinar Yanardag},
+  abstract={We propose the novel task of theatrical cue generation from dialogues. Using our play scripts dataset, which consists of 775K lines of dialogue and 277K cues, we approach the problem of cue generation as a controlled text generation task and show how cues can be used to amplify the impact of dialogue using a language model conditioned on a dialogue/cue discriminator. In addition, we explore the use of topic keywords and emotions to drive cue generation. Extensive quantitative and qualitative experiments show that language models can be successfully used to generate plausible and attribute-controlled text in highly specialized domains such as theater play scripts.},
+  booktitle={Controllable Generative Modeling in Language and Vision},
+  journal={Controllable Generative Modeling in Language and Vision},
+  pages={1365--1374},
+  year={2021},
+  month={July},
+  pdf={https://arxiv.org/abs/2112.06953},
+  teaser={teaser_theatergan.png},
+  website={/cuegen},
+  preprint={true}
+}
+
+@article{creativegan,
+  abbr={NeurIPS Workshop},
+  title={Exploring Latent Dimensions of Crowd-sourced Creativity},
+  author={Umut Kocasari* and Alperen Bag* and Efehan Atici and Pinar Yanardag},
+  abstract={Recent research showed that it is possible to find directions in the latent spaces of pre-trained GANs. These directions provide controllable generation and support a wide range of semantic editing operations such as zoom-in or rotation. While existing works focus on discovering directions for semantic image editing, we focus on an abstract property: Creativity. Can we manipulate an image to make it more or less creative? We build our work on the largest AI-based creativity platform Artbreeder where users are able to generate unique images using pre-trained GAN models. We explore the latent dimensions of the images generated on this platform and present a novel framework for manipulating images to make them more creative.},
+  booktitle={Machine Learning for Creativity and Design},
+  journal={Machine Learning for Creativity and Design},
+  pages={1365--1374},
+  year={2021},
+  month={July},
+  teaser={teaser_creativegan.png},
+  code={https://github.com/catlab-team/latentcreative},
+  pdf={https://arxiv.org/abs/2112.06978},
+  website={/latentcreative},
+  preprint={true}
+}
+
+@article{graph2pix,
+  abbr={ICCV Workshop},
+  title={Graph2Pix: A Graph-Based Image to Image Translation Framework (Full Paper)},
+  author={Dilara Gokay* and Enis Simsar* and Efehan Atici and Atif Emre Yilmaz and Alper Ahmetoglu and Pinar Yanardag},
+  abstract={In this paper, we propose a graph-based image-to-image translation framework for generating images. We use rich data collected from the popular creativity platform Artbreeder, where users interpolate multiple GAN-generated images to create artworks. This unique approach of creating new images leads to a tree-like structure where one can track historical data about the creation of a particular image. Inspired by this structure, we propose a novel graph-to-image translation model called Graph2Pix, which takes a graph and corresponding images as input and generates a single image as output. Our experiments show that Graph2Pix is able to outperform several image-to-image translation frameworks on benchmark metrics, including LPIPS (with a 25% improvement) and human perception studies (n=60), where users preferred the images generated by our method 81.5% of the time.},
+  booktitle={Advances of Image Manipulation Workshop},
+  journal={Advances of Image Manipulation},
+  pages={1365--1374},
+  year={2021},
+  month={July},
+  pdf={https://arxiv.org/abs/2108.09752},
+  code={https://github.com/catlab-team/graph2pix},
+  teaser={teaser_graph2pix.png},
+  website={/graph2pix},
+  preprint={true}
+}
+ 
