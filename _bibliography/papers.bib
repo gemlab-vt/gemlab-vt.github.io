@@ -4,12 +4,44 @@
 @string{aps = {American Physical Society,}}
 
 
+@article{noiseclr,
+  abbr={Pre-print},
+  title={RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models},
+  author={Ozgur Kara and Bariscan Kurtkaya and Hidir Yesiltepe and James M. Rehg and Pinar Yanardag},
+  abstract={Recent advancements in diffusion-based models have demonstrated significant success in generating images from text. However, video editing models have not yet reached the same level of visual quality and user control. To address this, we introduce RAVE, a zero-shot video editing method that leverages pre-trained text-to-image diffusion models without additional training. RAVE takes an input video and a text prompt to produce high-quality videos while preserving the original motion and semantic structure. It employs a novel noise shuffling strategy, leveraging spatio-temporal interactions between frames, to produce temporally consistent videos faster than existing methods. It is also efficient in terms of memory requirements, allowing it to handle longer videos. RAVE is capable of a wide range of edits, from local attribute modifications to shape transformations. In order to demonstrate the versatility of RAVE, we create a comprehensive video evaluation dataset ranging from object-focused scenes to complex human activities like dancing and typing, and dynamic scenes featuring swimming fish and boats. Our qualitative and quantitative experiments highlight the effectiveness of RAVE in diverse video editing scenarios compared to existing methods.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2023},
+  month={December},
+  teaser={teaser_rave.gif},
+  pdf={https://arxiv.org/abs/2312.04524},
+  website={https://rave-video.github.io},
+  selected={true}
+}
+
+@article{noiseclr,
+  abbr={Pre-print},
+  title={NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models},
+  author={Yusuf Dalva and Pinar Yanardag},
+  abstract={Generative models have been very popular in the recent years for their image generation capabilities. GAN-based models are highly regarded for their disentangled latent space, which is a key feature contributing to their success in controlled image editing. On the other hand, diffusion models have emerged as powerful tools for generating high-quality images. However, the latent space of diffusion models is not as thoroughly explored or understood. Existing methods that aim to explore the latent space of diffusion models usually relies on text prompts to pinpoint specific semantics. However, this approach may be restrictive in areas such as art, fashion, or specialized fields like medicine, where suitable text prompts might not be available or easy to conceive thus limiting the scope of existing work. In this paper, we propose an unsupervised method to discover latent semantics in text-to-image diffusion models without relying on text prompts. Our method takes a small set of unlabeled images from specific domains, such as faces or cats, and a pre-trained diffusion model, and discovers diverse semantics in unsupervised fashion using a contrastive learning objective. Moreover, the learned directions can be applied simultaneously, either within the same domain (such as various types of facial edits) or across different domains (such as applying cat and face edits within the same image) without interfering with each other. Our extensive experiments show that our method achieves highly disentangled edits, outperforming existing approaches in both diffusion-based and GAN-based latent space editing methods.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2023},
+  month={December},
+  teaser={teaser_noiseclr.jpeg},
+  pdf={https://arxiv.org/abs/2312.05390},
+  website={https://noiseclr.github.io},
+  selected={true}
+}
+
 
 @article{conform,
   abbr={Pre-print},
   title={CONFORM: Contrast is All You Need For High-Fidelity Text-to-Image Diffusion Models},
-  author={Tuna Han Salih Meral, Enis Simsar, Federico Tombari, Pinar Yanardag},
-  abstract={The discovery of interpretable directions in the latent spaces of pre-trained GAN models has recently become a popular topic. In particular, StyleGAN2 has enabled various image generation and manipulation tasks due to its rich and disentangled latent spaces. The discovery of such directions is typically done either in a supervised manner, which requires annotated data for each desired manipulation, or in an unsupervised manner, which requires a manual effort to identify the directions. As a result, existing work typically finds only a handful of directions in which controllable edits can be made. In this paper, we attempt to find the most representative and diverse subset of directions in stylespace of StyleGAN2. We formulate the problem as a coverage of stylespace and propose a novel submodular optimization framework that can be solved efficiently with a greedy optimization scheme. We evaluate our framework with qualitative and quantitative experiments and show that our method finds more diverse and relevant channels.},
+  author={Tuna Han Salih Meral and Enis Simsar and Federico Tombari and Pinar Yanardag},
+  abstract={Images produced by text-to-image diffusion models might not always faithfully represent the semantic intent of the provided text prompt, where the model might overlook or entirely fail to produce certain objects. Existing solutions often require customly tailored functions for each of these problems, leading to sub-optimal results, especially for complex prompts. Our work introduces a novel perspective by tackling this challenge in a contrastive context. Our approach intuitively promotes the segregation of objects in attention maps while also maintaining that pairs of related attributes are kept close to each other. We conduct extensive experiments across a wide variety of scenarios, each involving unique combinations of objects, attributes, and scenes. These experiments effectively showcase the versatility, efficiency, and flexibility of our method in working with both latent and pixel-based diffusion models, including Stable Diffusion and Imagen. Moreover, we publicly share our source code to facilitate further research.},
   booktitle={Pre-print},
   journal={Pre-print},
   pages={0},
