@@ -16,3 +16,6 @@ group :jekyll_plugins do
 end
 
 gem "csv", "~> 3.2"
+
+gem "observer", "~> 0.1"
+gem "faraday-retry", "~> 2.2"
