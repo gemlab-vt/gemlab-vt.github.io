@@ -6,7 +6,7 @@ title: Welcome to GEMLAB # the website title (if blank, full name will be used i
 first_name: GEMLAB
 middle_name:  
 last_name: Research Lab
-email: pinar@ai-fiction.com
+email: pinary@vt.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Recent publications from GEMLAB.
 footer_text: >
@@ -129,6 +129,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - jekyll-build-pages
 keep_files:
   - CNAME
   - .nojekyll
