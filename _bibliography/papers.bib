@@ -3,6 +3,71 @@
 
 @string{aps = {American Physical Society,}}
 
+@article{inversedvs,
+  abbr={Arxiv},
+  title={Dynamic View Synthesis as an Inverse Problem},
+  author={Hidir Yesiltepe and Pinar Yanardag},
+  abstract={In this work, we address dynamic view synthesis from monocular videos as an inverse problem in a training-free setting. By redesigning the noise initialization phase of a pre-trained video diffusion model, we enable high-fidelity dynamic view synthesis without any weight updates or auxiliary modules. We begin by identifying a fundamental obstacle to deterministic inversion arising from zero-terminal signal-to-noise ratio (SNR) schedules and resolve it by introducing a novel noise representation, termed K-order Recursive Noise Representation. We derive a closed form expression for this representation, enabling precise and efficient alignment between the VAE-encoded and the DDIM inverted latents. To synthesize newly visible regions resulting from camera motion, we introduce Stochastic Latent Modulation, which performs visibility aware sampling over the latent space to complete occluded regions. Comprehensive experiments demonstrate that dynamic view synthesis can be effectively performed through structured latent manipulation in the noise initialization phase.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2025},
+  month={December},
+  teaser={teaser_inversedvs.png},
+  pdf={https://arxiv.org/abs/2506.08004},
+  website={https://inverse-dvs.github.io},
+  preprint={true}
+}
+
+
+@article{lorashop,
+  abbr={Arxiv},
+  title={LoRAShop: Training-Free Multi-Concept Image Generation and Editing with Rectified Flow Transformers},
+  author={Yusuf Dalva and Hidir Yesiltepe and Pinar Yanardag},
+  abstract={We introduce LoRAShop, the first framework for multi-concept image editing with LoRA models. LoRAShop builds on a key observation about the feature interaction patterns inside Flux-style diffusion transformers: concept-specific transformer features activate spatially coherent regions early in the denoising process. We harness this observation to derive a disentangled latent mask for each concept in a prior forward pass and blend the corresponding LoRA weights only within regions bounding the concepts to be personalized. The resulting edits seamlessly integrate multiple subjects or styles into the original scene while preserving global context, lighting, and fine details. Our experiments demonstrate that LoRAShop delivers better identity preservation compared to baselines. By eliminating retraining and external constraints, LoRAShop turns personalized diffusion models into a practical `photoshop-with-LoRAs' tool and opens new avenues for compositional visual storytelling and rapid creative iteration.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2025},
+  month={December},
+  teaser={teaser_lorashop.png},
+  pdf={https://arxiv.org/abs/2505.23758},
+  website={https://lorashop.github.io/},
+  preprint={true}
+}
+
+@article{crea,
+  abbr={Arxiv},
+  title={CREA: A Collaborative Multi-Agent Framework for Creative Content Generation with Diffusion Models},
+  author={Kavana Venkatesh* and Connor Dunlop* and Pinar Yanardag},
+  abstract={Creativity in AI imagery remains a fundamental challenge, requiring not only the generation of visually compelling content but also the capacity to add novel, expressive, and artistically rich transformations to images. Unlike conventional editing tasks that rely on direct prompt-based modifications, creative image editing demands an autonomous, iterative approach that balances originality, coherence, and artistic intent. To address this, we introduce CREA, a novel multi-agent collaborative framework that mimics the human creative process. Our framework leverages a team of specialized AI agents who dynamically collaborate to conceptualize, generate, critique, and enhance images. Through extensive qualitative and quantitative evaluations, we demonstrate that CREA significantly outperforms state-of-the-art methods in diversity, semantic alignment, and creative transformation. By structuring creativity as a dynamic, agentic process, CREA redefines the intersection of AI and art, paving the way for autonomous AI-driven artistic exploration, generative design, and human-AI co-creation. To the best of our knowledge, this is the first work to introduce the task of creative editing.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2025},
+  month={December},
+  teaser={teaser_crea.png},
+  pdf={https://arxiv.org/abs/2504.05306},
+  website={https://crea-diffusion.github.io},
+  preprint={true}
+}
+
+@article{motionflow,
+  abbr={Arxiv},
+  title={MotionFlow: Attention-Driven Motion Transfer in Video Diffusion Models},
+  author={Tuna Han Salih Meral and Hidir Yesiltepe and Connor Dunlop and Pinar Yanardag},
+  abstract={Text-to-video models have demonstrated impressive capabilities in producing diverse and captivating video content, showcasing a notable advancement in generative AI. However, these models generally lack fine-grained control over motion patterns, limiting their practical applicability. We introduce MotionFlow, a novel framework designed for motion transfer in video diffusion models. Our method utilizes cross-attention maps to accurately capture and manipulate spatial and temporal dynamics, enabling seamless motion transfers across various contexts. Our approach does not require training and works on test-time by leveraging the inherent capabilities of pre-trained video diffusion models. In contrast to traditional approaches, which struggle with comprehensive scene changes while maintaining consistent motion, MotionFlow successfully handles such complex transformations through its attention-based mechanism. Our qualitative and quantitative experiments demonstrate that MotionFlow significantly outperforms existing models in both fidelity and versatility even during drastic scene alterations.},
+  booktitle={Pre-print},
+  journal={Pre-print},
+  pages={0},
+  year={2025},
+  month={December},
+  teaser={teaser_motionflow.png},
+  pdf={https://arxiv.org/abs/2412.05275},
+  website={https://motionflow-diffusion.github.io/},
+  preprint={true}
+}
+
 @article{clora,
   abbr={Arxiv},
   title={CLoRA: A Contrastive Approach to Compose Multiple LoRA Models},
@@ -18,88 +83,129 @@
   website={https://clora-diffusion.github.io},
   preprint={true}
 }
- 
-@article{mist,
-  abbr={Arxiv},
-  title={MIST: Mitigating Intersectional Bias with Disentangled Cross-Attention Editing in Text-to-Image Diffusion Models},
-  author={Hidir Yesiltepe and Kiymet Akdemir and Pinar Yanardag},
-  abstract={Diffusion-based text-to-image models have rapidly gained popularity for their ability to generate detailed and realistic images from textual descriptions. However, these models often reflect the biases present in their training data, especially impacting marginalized groups. While prior efforts to debias language models have focused on addressing specific biases, such as racial or gender biases, efforts to tackle intersectional bias have been limited. Intersectional bias refers to the unique form of bias experienced by individuals at the intersection of multiple social identities. Addressing intersectional bias is crucial because it amplifies the negative effects of discrimination based on race, gender, and other identities. In this paper, we introduce a method that addresses intersectional bias in diffusion-based text-to-image models by modifying cross-attention maps in a disentangled manner. Our approach utilizes a pre-trained Stable Diffusion model, eliminates the need for an additional set of reference images, and preserves the original quality for unaltered concepts. Comprehensive experiments demonstrate that our method surpasses existing approaches in mitigating both single and intersectional biases across various attributes. We make our source code and debiased models for various attributes available to encourage fairness in generative models and to support further research.},
-  booktitle={Pre-print},
-  journal={Pre-print},
+
+@article{fluxspace,
+  abbr={CVPR 2025},
+  title={FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers},
+  author={Yusuf Dalva and Kavana Venkatesh and Pinar Yanardag},
+  abstract={Rectified flow models have emerged as a dominant approach in image generation, showcasing impressive capabilities in high-quality image synthesis. However, despite their effectiveness in visual generation, rectified flow models often struggle with disentangled editing of images. This limitation prevents the ability to perform precise, attribute-specific modifications without affecting unrelated aspects of the image. In this paper, we introduce FluxSpace, a domain-agnostic image editing method leveraging a representation space with the ability to control the semantics of images generated by rectified flow transformers, such as Flux. By leveraging the representations learned by the transformer blocks within the rectified flow models, we propose a set of semantically interpretable representations that enable a wide range of image editing tasks, from fine-grained image editing to artistic creation. This work offers a scalable and effective image editing approach, along with its disentanglement capabilities.},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal={Conference on Computer Vision and Pattern Recognition},
   pages={0},
-  year={2024},
   month={December},
-  teaser={teaser_mist.png},
-  pdf={https://arxiv.org/abs/2403.19738},
-  website={https://mist-diffusion.github.io},
-  preprint={true}
+  teaser={teaser_fluxspace.png},
+  pdf={https://arxiv.org/abs/2412.09611},
+  website={https://fluxspace.github.io/},
+  featured={true}
 }
  
-@article{gantastic,
-  abbr={Arxiv},
-  title={GANTASTIC: GAN-based Transfer of Interpretable Directions for Disentangled Image Editing in Text-to-Image Diffusion Models},
-  author={Yusuf Dalva and Hidir Yesiltepe and Pinar Yanardag},
-  abstract={The rapid advancement in image generation models has predominantly been driven by diffusion models, which have demonstrated unparalleled success in generating high-fidelity, diverse images from textual prompts. Despite their success, diffusion models encounter substantial challenges in the domain of image editing, particularly in executing disentangled edits—changes that target specific attributes of an image while leaving irrelevant parts untouched. In contrast, Generative Adversarial Networks (GANs) have been recognized for their success in disentangled edits through their interpretable latent spaces. We introduce GANTASTIC, a novel framework that takes existing directions from pre-trained GAN models—representative of specific, controllable attributes—and transfers these directions into diffusion-based models. This novel approach not only maintains the generative quality and diversity that diffusion models are known for but also significantly enhances their capability to perform precise, targeted image edits, thereby leveraging the best of both worlds.},
-  booktitle={Pre-print},
-  journal={Pre-print},
+@article{loraclr,
+  abbr={CVPR 2025},
+  title={LoRACLR: Contrastive Adaptation for Customization of Diffusion Models},
+  author={Enis Simsar and Thomas Hofmann and Federico Tombari and Pinar Yanardag},
+  abstract={Recent advances in text-to-image customization have enabled high-fidelity, context-rich generation of personalized images, allowing specific concepts to appear in a variety of scenarios. However, current methods struggle with combining multiple personalized models, often leading to attribute entanglement or requiring separate training to preserve concept distinctiveness. We present LoRACLR, a novel approach for multi-concept image generation that merges multiple LoRA models, each fine-tuned for a distinct concept, into a single, unified model without additional individual fine-tuning. LoRACLR uses a contrastive objective to align and merge the weight spaces of these models, ensuring compatibility while minimizing interference. By enforcing distinct yet cohesive representations for each concept, LoRACLR enables efficient, scalable model composition for high-quality, multi-concept image synthesis. Our results highlight the effectiveness of LoRACLR in accurately merging multiple concepts, advancing the capabilities of personalized image generation.},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal={Conference on Computer Vision and Pattern Recognition},
   pages={0},
-  year={2024},
   month={December},
-  teaser={teaser_gantastic.png},
-  pdf={https://arxiv.org/abs/2403.19645},
-  website={https://gantastic.github.io/},
-  preprint={true}
+  teaser={teaser_loraclr.png},
+  pdf={https://arxiv.org/abs/2412.09622},
+  website={https://loraclr.github.io/},
+  featured={true}
 }
- 
+
+@article{explaindiffusion,
+  abbr={CVPR 2025},
+  title={Explaining in Diffusion: Explaining a Classifier Through Hierarchical Semantics with Text-to-Image Diffusion Models},
+  author={Tahira Kazimi* and Ritika Allada* and Pinar Yanardag},
+  abstract={Classifiers are important components in many computer vision tasks, serving as the foundational backbone of a wide variety of models employed across diverse applications. However, understanding the decision-making process of classifiers remains a significant challenge. We propose DiffEx, a novel method that leverages the capabilities of text-to-image diffusion models to explain classifier decisions. Unlike traditional GAN-based explainability models, which are limited to simple, single-concept analyses and typically require training a new model for each classifier, our approach can explain classifiers that focus on single concepts (such as faces or animals) as well as those that handle complex scenes involving multiple concepts. DiffEx employs vision-language models to create a hierarchical list of semantics, allowing users to identify not only the overarching semantic influences on classifiers (e.g. the 'beard' semantic in a facial classifier) but also their sub-types, such as 'goatee' or 'Balbo' beard. Our experiments demonstrate that DiffEx is able to cover a significantly broader spectrum of semantics compared to its GAN counterparts, providing a hierarchical tool that delivers a more detailed and fine-grained understanding of classifier decisions.},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal={Conference on Computer Vision and Pattern Recognition},
+  pages={0},
+  month={December},
+  teaser={teaser_explain.png},
+  pdf={https://arxiv.org/abs/2412.18604},
+  website={https://explain-in-diffusion.github.io},
+  featured={true}
+}
+
+
+@article{conceptattention,
+  abbr={ICML 2025},
+  title={[ORAL] ConceptAttention: Diffusion Transformers Learn Highly Interpretable Features},
+  author={Alec Helbling and Tuna Han Salih Meral and Ben Hoover and Pinar Yanardag and Duen Horng (Polo) Chau},
+  abstract={Do the rich representations of multi-modal diffusion transformers (DiTs) exhibit unique properties that enhance their interpretability? We introduce ConceptAttention, a novel method that leverages the expressive power of DiT attention layers to generate high-quality saliency maps that precisely locate textual concepts within images. Without requiring additional training, ConceptAttention repurposes the parameters of DiT attention layers to produce highly contextualized concept embeddings, contributing the major discovery that performing linear projections in the output space of DiT attention layers yields significantly sharper saliency maps compared to commonly used cross-attention mechanisms. Remarkably, ConceptAttention even achieves state-of-the-art performance on zero-shot image segmentation benchmarks, outperforming 11 other zero-shot interpretability methods on the ImageNet-Segmentation dataset and on a single-class subset of PascalVOC. Our work contributes the first evidence that the representations of multi-modal DiT models like Flux are highly transferable to vision tasks like segmentation, even outperforming multi-modal foundation models like CLIP.},
+  booktitle={The Forty-Second International Conference on Machine Learning (ICML)},
+  journal={The Forty-Second International Conference on Machine Learning},
+  pages={0},
+  month={December},
+  teaser={teaser_conceptattention.png},
+  pdf={https://arxiv.org/abs/2502.04320},
+  website={https://alechelbling.com/ConceptAttention},
+  featured={true}
+} 
+
+@article{stylebreeder,
+  abbr={NeurIPS 2024},
+  title={Stylebreeder 🎨: Exploring and Democratizing Artistic Styles through Text-to-Image Models},
+  author={Matthew Zheng* and Enis Simsar* and Hidir Yesiltepe and Federico Tombari and Joel Simon and Pinar Yanardag},
+  abstract={Text-to-image models are becoming increasingly popular, revolutionizing the landscape of digital art creation by enabling highly detailed and creative visual content generation. These models have been widely employed across various domains, particularly in art generation, where they facilitate a broad spectrum of creative expression and democratize access to artistic creation. In this paper, we introduce a comprehensive dataset of 6.8M images and 1.8M prompts generated by 95K users on Artbreeder, a platform that has emerged as a significant hub for creative exploration with over 13M users. We introduce a series of tasks with this dataset aimed at identifying diverse artistic styles, generating personalized content, and recommending styles based on user interests. By documenting unique, user-generated styles that transcend conventional categories like 'cyberpunk' or 'Picasso,' we explore the potential for unique, crowd-sourced styles that could provide deep insights into the collective creative psyche of users worldwide. We also evaluate different personalization methods to enhance artistic expression and introduce a style atlas, making these models available in LoRA format for public use. Our research demonstrates the potential of text-to-image diffusion models to uncover and promote unique artistic expressions, further democratizing AI in art and fostering a more diverse and inclusive artistic community. The dataset, code and models are available at this https URL under a Public Domain (CC0) license.},
+  booktitle={The Thirty-Eighth Annual Conference on Neural Information Processing Systems (Benchmark & Datasets Track)},
+  journal={The Thirty-Eighth Annual Conference on Neural Information Processing Systems (Benchmark & Datasets Track)},
+  pages={0},
+  month={December},
+  teaser={teaser_stylebreeder.jpg},
+  pdf={https://arxiv.org/abs/2406.14599},
+  website={https://stylebreeder.github.io/},
+  featured={true}
+}
 
 @article{noiseclr,
-  abbr={CVPR},
-  title={NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models},
+  abbr={CVPR 2024},
+  title={[ORAL] NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models},
   author={Yusuf Dalva and Pinar Yanardag},
   abstract={Generative models have been very popular in the recent years for their image generation capabilities. GAN-based models are highly regarded for their disentangled latent space, which is a key feature contributing to their success in controlled image editing. On the other hand, diffusion models have emerged as powerful tools for generating high-quality images. However, the latent space of diffusion models is not as thoroughly explored or understood. Existing methods that aim to explore the latent space of diffusion models usually relies on text prompts to pinpoint specific semantics. However, this approach may be restrictive in areas such as art, fashion, or specialized fields like medicine, where suitable text prompts might not be available or easy to conceive thus limiting the scope of existing work. In this paper, we propose an unsupervised method to discover latent semantics in text-to-image diffusion models without relying on text prompts. Our method takes a small set of unlabeled images from specific domains, such as faces or cats, and a pre-trained diffusion model, and discovers diverse semantics in unsupervised fashion using a contrastive learning objective. Moreover, the learned directions can be applied simultaneously, either within the same domain (such as various types of facial edits) or across different domains (such as applying cat and face edits within the same image) without interfering with each other. Our extensive experiments show that our method achieves highly disentangled edits, outperforming existing approaches in both diffusion-based and GAN-based latent space editing methods.},
   booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
   journal={Conference on Computer Vision and Pattern Recognition},
   pages={0},
-  year={2024},
   month={December},
   teaser={teaser_noiseclr.jpeg},
   pdf={https://arxiv.org/abs/2312.05390},
   website={https://noiseclr.github.io},
-  selected={true}
+  featured={true}
 }
 
 
 @article{conform,
-  abbr={CVPR},
+  abbr={CVPR 2024},
   title={CONFORM: Contrast is All You Need For High-Fidelity Text-to-Image Diffusion Models},
   author={Tuna Han Salih Meral and Enis Simsar and Federico Tombari and Pinar Yanardag},
   abstract={Images produced by text-to-image diffusion models might not always faithfully represent the semantic intent of the provided text prompt, where the model might overlook or entirely fail to produce certain objects. Existing solutions often require customly tailored functions for each of these problems, leading to sub-optimal results, especially for complex prompts. Our work introduces a novel perspective by tackling this challenge in a contrastive context. Our approach intuitively promotes the segregation of objects in attention maps while also maintaining that pairs of related attributes are kept close to each other. We conduct extensive experiments across a wide variety of scenarios, each involving unique combinations of objects, attributes, and scenes. These experiments effectively showcase the versatility, efficiency, and flexibility of our method in working with both latent and pixel-based diffusion models, including Stable Diffusion and Imagen. Moreover, we publicly share our source code to facilitate further research.},
   booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
   journal={Conference on Computer Vision and Pattern Recognition},
   pages={0},
-  year={2024},
   month={December},
   teaser={teaser_conform.jpeg},
   pdf={https://arxiv.org/abs/2312.06059},
   website={https://conform-diffusion.github.io},
-  selected={true}
+  featured={true}
 }
 
 @article{rave,
-  abbr={CVPR},
-  title={RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models},
-  author={Ozgur Kara and Bariscan Kurtkaya and Hidir Yesiltepe and James M. Rehg and Pinar Yanardag},
+  abbr={CVPR 2024},
+  title={[Highlight] RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models},
+  author={Ozgur Kara* and Bariscan Kurtkaya* and Hidir Yesiltepe and James M. Rehg and Pinar Yanardag},
   abstract={Recent advancements in diffusion-based models have demonstrated significant success in generating images from text. However, video editing models have not yet reached the same level of visual quality and user control. To address this, we introduce RAVE, a zero-shot video editing method that leverages pre-trained text-to-image diffusion models without additional training. RAVE takes an input video and a text prompt to produce high-quality videos while preserving the original motion and semantic structure. It employs a novel noise shuffling strategy, leveraging spatio-temporal interactions between frames, to produce temporally consistent videos faster than existing methods. It is also efficient in terms of memory requirements, allowing it to handle longer videos. RAVE is capable of a wide range of edits, from local attribute modifications to shape transformations. In order to demonstrate the versatility of RAVE, we create a comprehensive video evaluation dataset ranging from object-focused scenes to complex human activities like dancing and typing, and dynamic scenes featuring swimming fish and boats. Our qualitative and quantitative experiments highlight the effectiveness of RAVE in diverse video editing scenarios compared to existing methods.},
   booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
   journal={Conference on Computer Vision and Pattern Recognition},
   pages={0},
-  year={2024},
   month={December},
-  teaser={teaser_rave.gif},
+  teaser={teaser_rave.png},
   pdf={https://arxiv.org/abs/2312.04524},
   website={https://rave-video.github.io},
-  selected={true}
+  featured={true}
 }
+
 
 @article{fantasticstyles,
   abbr={WACV},
@@ -114,13 +220,13 @@
   teaser={teaser_fantastic.jpeg},
   pdf={https://arxiv.org/abs/2203.08516},
   website={https://catlab-team.github.io/fantasticstyles},
-  selected={true}
+  selected={false}
 }
  
 
 @article{latent3D,
   abbr={WACV},
-  title={Text and Image Guided 3D Avatar Generation and Manipulation},
+  title={[Spotlight] Text and Image Guided 3D Avatar Generation and Manipulation},
   author={Zehranaz Canfes* and Furkan Atasoy* and Alara Dirik* and Pinar Yanardag},
   abstract={The manipulation of latent space has recently become an interesting topic in the field of generative models. Recent research shows that latent directions can be used to manipulate images towards certain attributes. However, controlling the generation process of 3D generative models remains a challenge. In this work, we propose a novel 3D manipulation method that can manipulate both the shape and texture of the model using text or image-based prompts such as 'a young face' or  'a surprised face'. We leverage the power of  Contrastive Language-Image Pre-training (CLIP) model and a pre-trained 3D GAN model designed to generate face avatars, and create a fully differentiable rendering pipeline to manipulate meshes. More specifically, our method takes an input latent code and modifies it such that the target attribute specified by a text or image prompt is present or enhanced, while leaving other attributes largely unaffected. Our method requires only 5 minutes per manipulation, and we demonstrate the effectiveness of our approach with extensive results and comparisons. },
   booktitle={Winter Conference on Applications of Computer Vision (WACV)},
@@ -131,7 +237,7 @@
   teaser={teaser_latent3D.jpeg},
   pdf={https://arxiv.org/abs/2202.06079},
   website={https://catlab-team.github.io/latent3D},
-  selected={true}
+  selected={false}
 }
 
 @article{fairstyle,
@@ -147,7 +253,7 @@
   teaser={teaser_fairstyle.png},
   pdf={https://arxiv.org/abs/2202.06240},
   website={https://catlab-team.github.io/fairstyle},
-  selected={true}
+  selected={false}
 }
 
 @article{paintinstyle,
@@ -162,7 +268,7 @@
   month={January},
   teaser={teaser_paintinstyle.png},
   website={https://catlab-team.github.io/paintinstyle},
-  selected={true}
+  selected={false}
 }
 
 @article{rankinstyle,
@@ -177,13 +283,13 @@
   month={January},
   teaser={teaser_rankinstyle.jpeg},
   website={https://catlab-team.github.io/rankinstyle},
-  selected={true}
+  selected={false}
 }
 
 
 @article{midispace,
   abbr={ACM CC},
-  title={MIDISpace: Finding Linear Directions in Latent Space for Music Generation (Honorable Mention Award)},
+  title={[Honorable Mention] MIDISpace: Finding Linear Directions in Latent Space for Music Generation},
   author={Meliksah Turker and Alara Dirik and Pinar Yanardag},
   abstract={While recent works have shown that it is possible to find disentangled directions in the latent space of image generation networks, finding directions in the latent space of sequential models for music generation remains a largely unexplored topic. In this work, we propose a method for discovering linear directions in the latent space of a music generating Variational Auto-Encoder (VAE). We use PCA, a statistical method to transform the input data such that the variation along the new axes is maximized. We apply PCA on the latent space activations of our model and find largely disentangled directions that change the style and characteristics of the input music. Our experiments show that the found directions are often monotonic, global and encode fundamental musical characteristics such as colorfulness, speed and repetitiveness. Moreover, we propose a set of quantitative metrics to describe different musical styles and characteristics to evaluate our results. We show that the found directions decouple content and can be utilized for style transfer and conditional music generation tasks.},
   booktitle={ACM Creativity & Cognition (ACM C&C)},
@@ -193,7 +299,7 @@
   month={January},
   teaser={teaser_midispace.png},
   website={https://catlab-team.github.io/midispace},
-  selected={true}
+  selected={false}
 }
 
 @article{stylemc,
@@ -210,7 +316,7 @@
   teaser={teaser_cat_stylemc.png},
   code={https://github.com/catlab-team/stylemc},
   website={https://catlab-team.github.io/stylemc},
-  selected={true}
+  selected={false}
   }
 
 
@@ -228,7 +334,7 @@
   code={https://github.com/catlab-team/latentclr},
   website={https://catlab-team.github.io/latentclr},
   teaser={teaser_cat_latentclr.png},
-  selected={true}
+  selected={false}
 }
 
 @article{graph2pix,
@@ -245,12 +351,12 @@
   code={https://github.com/catlab-team/graph2pix},
   teaser={teaser_graph2pix.png},
   website={https://catlab-team.github.io/graph2pix},
-  selected={true}
+  selected={false}
 }
 
 @article{theatergan,
   abbr={NeurIPS Workshop},
-  title={Controlled Cue Generation for Play Scripts (Best Paper Award)},
+  title={[Best Paper Award]Controlled Cue Generation for Play Scripts},
   author={Alara Dirik* and Hilal Donmez* and Pinar Yanardag},
   abstract={We propose the novel task of theatrical cue generation from dialogues. Using our play scripts dataset, which consists of 775K lines of dialogue and 277K cues, we approach the problem of cue generation as a controlled text generation task and show how cues can be used to amplify the impact of dialogue using a language model conditioned on a dialogue/cue discriminator. In addition, we explore the use of topic keywords and emotions to drive cue generation. Extensive quantitative and qualitative experiments show that language models can be successfully used to generate plausible and attribute-controlled text in highly specialized domains such as theater play scripts.},
   booktitle={Controllable Generative Modeling in Language and Vision},
@@ -261,7 +367,7 @@
   pdf={https://arxiv.org/abs/2112.06953},
   teaser={teaser_theatergan.png},
   website={https://catlab-team.github.io/cuegen},
-  selected={true}
+  selected={false}
 }
 
 @article{creativegan,
@@ -278,6 +384,6 @@
   code={https://github.com/catlab-team/latentcreative},
   pdf={https://arxiv.org/abs/2112.06978},
   website={https://catlab-team.github.io/latentcreative},
-  selected={true}
+  selected={false}
 }
  

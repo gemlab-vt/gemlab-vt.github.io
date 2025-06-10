@@ -6,7 +6,7 @@ layout: default
 
   <header class="post-header">
 
-   <center><h1 class="post-title" style="font-family: 'Crimson Text', serif;">GEMLAB</h1></center>
+   <center><h1 class="post-title" style="font-family: 'Crimson Text', serif;">GEMLAB at Virginia Tech</h1></center>
 
 Welcome to <b>GE</b>nerative <b>M</b>odeling (GEM) Lab, led by Dr. <a href='http://pinguar.org' target="_blank">Pinar Yanardag</a> at <a href='https://cs.vt.edu/' target="_blank">Virginia Tech, Department of Computer Science</a>.<hr>
 
@@ -14,7 +14,10 @@ Welcome to <b>GE</b>nerative <b>M</b>odeling (GEM) Lab, led by Dr. <a href='http
 
 
   <article>
- 
+    {% if page.featured %}
+      {% include featured.html %}
+    {% endif %}
+
  
    {% if page.preprints %}
       {% include preprints.html %}
@@ -35,7 +38,7 @@ Welcome to <b>GE</b>nerative <b>M</b>odeling (GEM) Lab, led by Dr. <a href='http
 
 <b>Principal Investigator</b>:  <a href="http://pinguar.org" target="_blank">Dr. Pinar Yanardag</a><br>
 <b>Current PhD Students:</b> <a href="https://tunahansalih.github.io/" target="_blank">Tuna Han Salih Meral</a>, <a href='https://yusufdalva.github.io/' target='_blank'>Yusuf Dalva</a>, <a href="" target="_blank">Kiymet Akdemir</a>, <a href="https://sites.google.com/view/hidir-yesiltepe" target="_blank">Hidir Yesiltepe</a>  <br>
-<b>Alumi</b>: <a href="https://enis.dev" target="_blank">Enis Simsar</a> (now at ETH), <a href='https://okyksl.gitlab.io/' target="_blank">Oguz Kaan Yuksel</a> (now at EPFL), Dilara Gokay (now at DeepMind), Alara Dirik (now at Imperial College London), <a href="https://kocasariumut.github.io" target="_blank">Umut Kocasari</a> (now at TUM), <a href="https://keremzaman.com/" target="_blank">Kerem Zaman</a> (now at UNC Chapel Hill), <a href='https://mertyg.github.io/' target="_blank">Mert Yuksekgonul</a> (now at Stanford), Zehranaz Canfes (now at TUM), Furkan Atasoy (now at TUM), Berkay Doner (now at EPFL), Elif Sema Balcioglu (now at EPFL), Eylul Yalcinkaya (now at Facebook), Cemre Efe Karakas (now at Amazon), Merve Rabia Barin (now at Koc), Ezgi Gulperi Er (now at Goldman Sachs).
+<b>Alumi</b>: <a href="https://enis.dev" target="_blank">Enis Simsar</a> (now at ETH), <a href='https://okyksl.gitlab.io/' target="_blank">Oguz Kaan Yuksel</a> (now at EPFL), Dilara Gokay (now at DeepMind), Alara Dirik (now at Imperial College London), <a href="https://kocasariumut.github.io" target="_blank">Umut Kocasari</a> (now at TUM), <a href="https://keremzaman.com/" target="_blank">Kerem Zaman</a> (now at UNC Chapel Hill), <a href='https://mertyg.github.io/' target="_blank">Mert Yuksekgonul</a> (now at Stanford), Zehranaz Canfes (now at TUM), Furkan Atasoy (now at TUM), Berkay Doner (now at EPFL), Elif Sema Balcioglu (now at EPFL), Eylul Yalcinkaya (now at Facebook), Cemre Efe Karakas (now at Amazon), Merve Rabia Barin (now at Purdue), Ezgi Gulperi Er (now at Goldman Sachs).
 
 <hr>
 <h2 class="post-title" style="font-family: 'Crimson Text', serif;">Acknowledgements</h2>
