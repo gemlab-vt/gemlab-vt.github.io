@@ -246,6 +246,14 @@
     });
   }
 
+  /* ---------------------- Back to top ---------------------- */
+  document.querySelectorAll('a[href="#top"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
   var navMap = {};
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){ navMap[a.getAttribute('href').slice(1)] = a; });
   var secs = document.querySelectorAll('section[id]');
