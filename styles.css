@@ -181,7 +181,7 @@
 
   .card-tags{ display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
   .idx{ font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600; }
-  .card-title{ font-family:var(--display); font-weight:600; font-size:clamp(1.16rem,2vw,1.48rem); line-height:1.3; letter-spacing:-.01em; margin:.7rem 0 .5rem; color:var(--ink); overflow-wrap:anywhere; }
+  .card-title{ font-family:var(--display); font-weight:600; font-size:clamp(1.16rem,2vw,1.48rem); line-height:1.3; letter-spacing:-.01em; margin:.4rem 0 .5rem; color:var(--ink); overflow-wrap:anywhere; }
   .authors{ font-size:1rem; color:var(--muted); line-height:1.5; margin:0; word-break:break-word; }
   .authors .pi{ color:var(--muted); font-weight:400; }
 
@@ -323,7 +323,22 @@
   .keyworks{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.4rem; }
   .card-title-link{ color:inherit; text-decoration:none; transition:color .2s; }
   .card-title-link:hover{ color:var(--accent); }
-  .pub-teaser{ display:block; width:calc(100% + 3rem); margin:-1.5rem -1.5rem 1.1rem; height:150px; object-fit:cover; background:#ece3d7; }
+  /* Minimal publication cards: small rounded-square thumbnail on the left */
+  .card:has(.pub-teaser){
+    display:grid;
+    grid-template-columns:84px 1fr;
+    grid-template-rows:auto auto auto 1fr;
+    column-gap:1.2rem;
+  }
+  .pub-teaser{ grid-column:1; grid-row:1 / -1; align-self:start; width:84px; height:84px; margin:0; border-radius:14px; object-fit:cover; background:#ece3d7; box-shadow:0 6px 16px -10px rgba(58,0,25,.5); }
+  .card:has(.pub-teaser) > .card-tags{ grid-column:2; grid-row:1; }
+  .card:has(.pub-teaser) > .card-title{ grid-column:2; grid-row:2; }
+  .card:has(.pub-teaser) > .authors{ grid-column:2; grid-row:3; }
+  .card:has(.pub-teaser) > .card-foot{ grid-column:2; grid-row:4; }
+  @media (max-width:520px){
+    .card:has(.pub-teaser){ grid-template-columns:64px 1fr; column-gap:.9rem; }
+    .pub-teaser{ width:64px; height:64px; }
+  }
   .partner.alum em{ font-style:normal; font-weight:500; color:var(--muted); }
   .contact-grid.c4{ grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); }
   .mini-label.mt{ margin-top:2.3rem; }
