@@ -158,6 +158,7 @@
   .sec-kicker .bar{ flex:1; height:1px; background:var(--line); }
   .sec-head h2{ font-family:var(--display); font-weight:700; font-size:clamp(2rem,4vw,3.2rem); line-height:1.03; letter-spacing:-.025em; margin:0; color:var(--ink); }
   .sec-head .sub{ margin:.85rem 0 0; color:var(--ink-soft); font-size:clamp(.98rem,1.6vw,1.1rem); max-width:64ch; }
+  #publications .sec-head .sub{ max-width:none; }
 
   /* ============================== Cards / grids ============================== */
   .cards{ display:grid; gap:1.2rem; grid-template-columns:1fr; }
