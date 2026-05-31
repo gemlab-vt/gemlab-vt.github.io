@@ -11,7 +11,7 @@
     var dpr = 1, W = 0, H = 0, prevW = 0, prevH = 0;
     var sprites = [], gems = [], sparks = [];
     var pointer = { x:0, y:0, active:false, r:160 };
-    var BG = '#f4efe9';
+    var BG = '#fbfaf8';
 
     function rgba(c,a){ return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; }
 
