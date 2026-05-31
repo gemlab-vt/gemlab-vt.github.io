@@ -7,11 +7,11 @@
   if (canvas){
     var ctx = canvas.getContext('2d');
     var SPRITE = 160;
-    var COLORS = [[255,45,139],[11,187,176],[124,58,237]]; /* pink, turquoise, purple */
+    var COLORS = [[99,0,49],[229,117,31],[207,68,32]]; /* pink, turquoise, purple */
     var dpr = 1, W = 0, H = 0, prevW = 0, prevH = 0;
     var sprites = [], gems = [], sparks = [];
     var pointer = { x:0, y:0, active:false, r:160 };
-    var BG = '#f2f2f4';
+    var BG = '#f4efe9';
 
     function rgba(c,a){ return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; }
 
