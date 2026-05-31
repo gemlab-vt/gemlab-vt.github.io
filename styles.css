@@ -7,7 +7,7 @@
     --ink-soft:#5c5359;
     --muted:#877c77;
     --line:rgba(58,0,25,.10);
-    --bg:#fbfaf8;
+    --bg:#f3f4f6;
     --glass:rgba(255,255,255,.66);
     --shadow:0 12px 34px -16px rgba(58,0,25,.20);
     --shadow-lg:0 24px 50px -20px rgba(58,0,25,.30);
@@ -138,9 +138,8 @@
     .hero-copy{ padding-bottom:clamp(1.6rem,6vw,2.2rem); border-bottom:1px solid var(--line); }
     .snapshot{ margin-top:clamp(1.6rem,6vw,2.2rem); }
   }
-  .snap-head{ display:flex; align-items:center; gap:.6rem; font-family:var(--display); font-weight:700; font-size:1.7rem; letter-spacing:-.01em; color:var(--ink); margin-bottom:1.3rem; }
-  .snap-head .logo-gem{ width:28px; height:28px; }
-  .hero-mascot{ display:block; width:clamp(140px,46%,200px); height:auto; margin:-.2rem auto 1.1rem; filter:drop-shadow(0 12px 22px rgba(134,31,65,.24)); }
+  .snap-head{ text-align:center; font-family:var(--display); font-weight:700; font-size:1.7rem; letter-spacing:-.01em; color:var(--ink); margin-bottom:.6rem; }
+  .hero-mascot{ display:block; width:clamp(150px,52%,210px); height:auto; margin:.1rem auto 1.2rem; filter:drop-shadow(0 12px 22px rgba(134,31,65,.24)); }
   @media (max-width:939.98px){ .hero-mascot{ width:136px; } }
   .snap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.1rem; }
   .snap-grid .stat.wide{ grid-column:1 / -1; border-top:1px solid var(--line); margin-top:.35rem; padding-top:.95rem; }
