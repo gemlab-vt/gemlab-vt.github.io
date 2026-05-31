@@ -140,6 +140,8 @@
   }
   .snap-head{ display:flex; align-items:center; gap:.6rem; font-family:var(--display); font-weight:700; font-size:1.7rem; letter-spacing:-.01em; color:var(--ink); margin-bottom:1.3rem; }
   .snap-head .logo-gem{ width:28px; height:28px; }
+  .hero-mascot{ display:block; width:clamp(140px,46%,200px); height:auto; margin:-.2rem auto 1.1rem; filter:drop-shadow(0 12px 22px rgba(134,31,65,.24)); }
+  @media (max-width:939.98px){ .hero-mascot{ width:136px; } }
   .snap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.1rem; }
   .snap-grid .stat.wide{ grid-column:1 / -1; border-top:1px solid var(--line); margin-top:.35rem; padding-top:.95rem; }
   .stat{ padding:.3rem 0; }
