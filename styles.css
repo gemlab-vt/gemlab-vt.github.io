@@ -255,6 +255,10 @@
   .avatar{ width:88px; height:88px; border-radius:50%; margin:0 auto 1rem; display:grid; place-items:center; background:linear-gradient(135deg,var(--a),var(--b)); color:#fff; font-family:var(--display); font-weight:700; font-size:1.5rem; letter-spacing:.02em; overflow:hidden; position:relative; box-shadow:0 10px 24px -10px rgba(58,0,25,.4); transition:transform .4s cubic-bezier(.2,.7,.2,1); }
   .profile:hover .avatar{ transform:scale(1.06) rotate(-2deg); }
   .avatar img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .avatar-gem{ background:rgba(134,31,65,.06); }
+  .avatar-gem img{ object-fit:contain; padding:14px; }
+  .profile-join{ border-style:dashed; border-color:rgba(134,31,65,.4); background:rgba(255,255,255,.45); }
+  .profile-join .p-name{ color:var(--pink); }
   .p-name{ font-family:var(--display); font-weight:600; font-size:1.02rem; margin:0; color:var(--ink); }
   .p-role{ font-family:var(--body); font-size:.94rem; color:var(--muted); margin:.35rem 0 .95rem; }
   .p-links{ display:flex; flex-direction:column; gap:.45rem; align-items:center; }
