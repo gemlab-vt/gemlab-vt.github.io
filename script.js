@@ -7,7 +7,7 @@
   if (canvas){
     var ctx = canvas.getContext('2d');
     var SPRITE = 160;
-    var COLORS = [[99,0,49],[229,117,31],[207,68,32]]; /* pink, turquoise, purple */
+    var COLORS = [[134,31,65],[229,117,31],[229,117,31]]; /* pink, turquoise, purple */
     var dpr = 1, W = 0, H = 0, prevW = 0, prevH = 0;
     var sprites = [], gems = [], sparks = [];
     var pointer = { x:0, y:0, active:false, r:160 };
