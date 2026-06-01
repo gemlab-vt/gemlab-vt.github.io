@@ -150,7 +150,8 @@
     .hero-copy{ padding-bottom:clamp(1.6rem,6vw,2.2rem); border-bottom:1px solid var(--line); }
     .snapshot{ margin-top:clamp(1.6rem,6vw,2.2rem); }
   }
-  .snap-head{ display:flex; align-items:center; gap:.6rem; font-family:var(--display); font-weight:700; font-size:1.7rem; letter-spacing:-.01em; color:var(--ink); margin-bottom:1.3rem; }
+  .snap-head{ text-align:center; font-family:var(--display); font-weight:700; font-size:1.7rem; letter-spacing:-.01em; color:var(--ink); margin-bottom:.6rem; }
+  .hero-mascot{ display:block; width:clamp(150px,52%,210px); height:auto; margin:.1rem auto 1.2rem; filter:drop-shadow(0 12px 22px rgba(134,31,65,.24)); }
   .snap-head .logo-gem{ width:28px; height:28px; }
   .snap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.1rem; }
   .stat{ padding:.3rem 0; }
@@ -379,14 +380,9 @@
           </div>
           <aside class="snapshot anim" style="animation-delay:.36s" aria-label="Conference snapshot">
             <div class="snap-head">
-              <svg class="logo-gem" viewBox="0 0 32 32" aria-hidden="true">
-            <defs><linearGradient id="gemSnap" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#861f41"/><stop offset="50%" stop-color="#e5751f"/><stop offset="100%" stop-color="#e5751f"/>
-            </linearGradient></defs>
-            <path d="M8 5h16l5 7-13 16L3 12z" fill="url(#gemSnap)"/>
-          </svg>
-          Conference snapshot
+              Conference snapshot
             </div>
+            <img class="hero-mascot" src="../images/gemlab_hokie2.png" alt="GEMLAB Hokie mascot holding a gem" width="480" height="480" loading="lazy">
             <div class="snap-grid">
               <div class="stat">
                 <div class="num pink">
