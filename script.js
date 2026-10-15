@@ -101,9 +101,9 @@
     }
 
     function buildGems(){
-      var count = Math.round((W*H) / 42000);
+      var count = Math.round((W*H) / 168000);
       var small = W < 720;
-      count = Math.max(small ? 9 : 16, Math.min(small ? 16 : 30, count));
+      count = Math.max(small ? 2 : 4, Math.min(small ? 4 : 8, count));
       gems = [];
       for (var i=0;i<count;i++){ gems.push(makeGem()); }
     }
