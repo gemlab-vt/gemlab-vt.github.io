@@ -10,23 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
+    color-scheme: light;
     --bg: #ffffff; --ink: #17171a; --ink-2: #4a4a50; --muted: #8a8a90; --rule: #e7e7ea; --soft: #f4f4f6;
     --accent: #0f8b8d; --panel-bg: #ffffff; --panel-filter: none;
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --bg: #141416; --ink: #ececee; --ink-2: #b9b9bf; --muted: #7e7e86; --rule: #2a2a2f; --soft: #1d1d21;
-      --accent: #4fb8ba; --panel-bg: #f3f3f1; --panel-filter: brightness(.94);
-    }
-  }
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --bg: #141416; --ink: #ececee; --ink-2: #b9b9bf; --muted: #7e7e86; --rule: #2a2a2f; --soft: #1d1d21;
-    --accent: #4fb8ba; --panel-bg: #f3f3f1; --panel-filter: brightness(.94);
   }
   html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   *, *::before, *::after { box-sizing: inherit; }
