@@ -1,746 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f3f4f6">
-    <meta name="description" content="GEMLAB, the GEnerative Modeling Lab at Virginia Tech, led by Dr. Pinar Yanardag. Generative models, controllable image and video generation, diffusion editing, creativity, and interpretability.">
-    <title>GEMLAB - Generative Modeling Lab, Virginia Tech</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <canvas id="gem-canvas" aria-hidden="true"></canvas>
-    <div class="grain" aria-hidden="true">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GEM Lab — Generative Modeling Lab, Virginia Tech</title>
+<meta name="description" content="GEM Lab, the Generative Modeling Lab at Virginia Tech, led by Dr. Pinar Yanardag. Controllable image and video generation, personalization, and interpretability of generative models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/gem-logo.png">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="#">GEM Lab<small>Virginia Tech</small></a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#collab">Collaborate</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="about">
+    <div class="lab-logo"><img class="base" src="/images/gem-logo.png" alt="GEM Lab gem logo"><img class="alt" src="/images/gem-bird-logo.png" alt=""></div>
+    <h1>Generative worlds. <span class="ul">Human direction.</span></h1>
+    <p class="lede">Generative Modeling (GEM) Lab is led by Dr. <a href="https://pinguar.org/">Pinar Yanardag</a> in the Department of Computer Science at Virginia Tech. We build generative models for images, video, and interactive worlds that follow human direction: controllable at a fine-grained level, personal to the concepts you care about, and efficient enough to run over long horizons.</p>
+    <div class="cta">
+      <a href="#research">Publications</a>
+      <a href="#team">Meet the team</a>
+      <a href="/neurips/">NeurIPS’26 Overview</a>
+      <a href="/cvpr/">CVPR’26 Overview</a>
     </div>
-    <header class="nav" id="top">
-      <nav class="nav-inner" aria-label="Primary">
-        <a class="brand" href="https://gemlab-vt.github.io/" aria-label="GEMLAB home"><svg class="logo-gem" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gemNav" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#861f41"/><stop offset="50%" stop-color="#e5751f"/><stop offset="100%" stop-color="#e5751f"/></linearGradient></defs><path d="M8 5h16l5 7-13 16L3 12z" fill="url(#gemNav)"/><g fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="1" stroke-linejoin="round"><path d="M8 5 6 12l10 16M24 5l2 7-10 16M3 12h26M11 5l-1.5 7M21 5l1.5 7"/></g></svg> GEMLAB <span class="yr">Virginia&nbsp;Tech</span></a>
-        <div class="nav-links" id="navLinks">
-          <a href="#about">About</a><a href="#publications">Publications</a><a href="#news">News</a><a href="#team">Team</a><a href="#collab">Collaborate</a><a href="#connect">Connect</a>
-        </div>
-        <button class="burger" id="burger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
-      </nav>
-    </header>
-    <main>
-      <section class="hero" id="about">
-        <div class="wrap hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow anim" style="animation-delay:.05s"><i class="ping"></i>GEnerative Modeling (GEM) Lab</span>
-            <h1 class="anim" style="animation-delay:.12s">
-              <span class="g">GE</span>nerative <span class="c">M</span>odeling Lab<span class="dot">.</span>
-            </h1>
-            <p class="lead anim" style="animation-delay:.2s">
-              GEMLAB is led by Dr. <a class="lead-link" href="http://pinguar.org" target="_blank" rel="noopener">Pinar Yanardag</a> at Virginia Tech, Department of Computer Science. We research generative models from controllable image and video generation, personalization, and the interpretability of modern generative systems.
-            </p>
-            <div class="cta anim" style="animation-delay:.28s">
-              <a class="btn btn-accent" href="#publications">Publications</a><a class="btn btn-ghost" href="#team">Meet the team</a><a class="btn btn-ghost" href="https://gemlab-vt.github.io/neurips" target="_blank" rel="noopener">Find us at NeurIPS <span class="ext">&#8599;</span></a>
-            </div>
-          </div>
-          <aside class="snapshot anim" style="animation-delay:.36s" aria-label="Lab at a glance">
-            <div class="snap-head">
-              Lab at a glance
-            </div>
-            <img class="hero-mascot" src="images/gemlab_hokie2.png" alt="GEMLAB Hokie mascot holding a gem" width="480" height="480" loading="lazy">
-            <div class="snap-grid">
-              <div class="stat">
-                <div class="num pink">
-                  25+
-                </div>
-                <div class="label">
-                  Papers since &rsquo;23
-                </div>
-              </div>
-              <div class="stat">
-                <div class="num turq">
-                  6
-                </div>
-                <div class="label">
-                  PhD researchers
-                </div>
-              </div>
-              <div class="stat">
-                <div class="num purple">
-                  7+
-                </div>
-                <div class="label">
-                  Industry partners
-                </div>
-              </div>
-              <div class="stat">
-                <div class="num grad">
-                  &#8734;
-                </div>
-                <div class="label">
-                  Generative ideas
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-      <section class="sec" id="publications" style="--accent:var(--turq)">
-        <div class="wrap">
-          <header class="sec-head reveal">
-            <div class="sec-kicker">
-              <span class="n">01</span><span>Selected publications</span><span class="bar"></span>
-            </div>
-            <h2>
-              Publications
-            </h2>
-            <p class="sub">
-              GEMLAB members have produced 25+ top-conference papers and 10+ workshop papers since Fall 2023. Here are some selected works.
-            </p>
-          </header>
-          <div class="cards two">
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-27.jpg" alt="From Zero to Hero: Training-Free Custom Concept Spawning in World Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://spawn-world.github.io/" target="_blank" rel="noopener">From Zero to Hero: Training-Free Custom Concept Spawning in World Models</a>
-              </h3>
-              <p class="authors">
-                Kiymet Akdemir and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2606.02575" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://spawn-world.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-25.jpg" alt="VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://videomla.github.io/" target="_blank" rel="noopener">VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion</a>
-              </h3>
-              <p class="authors">
-                Hidir Yesiltepe, Jiazhen Hu, Tuna Han Salih Meral, Adil Kaan Akan, Kaan Oktay, Hoda Eldardiry, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2605.30351" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://videomla.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-24.jpg" alt="AdaState: Self-Evolving Anchors for Streaming Video Generation teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://adastate.github.io/" target="_blank" rel="noopener">AdaState: Self-Evolving Anchors for Streaming Video Generation</a>
-              </h3>
-              <p class="authors">
-                Yusuf Dalva and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2605.30349" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://adastate.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-29.jpg" alt="HiPhy: Hierarchical Alignment for Physically-Plausible Multi-Principle Video Generation teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://hiphy-video.github.io/" target="_blank" rel="noopener">HiPhy: Hierarchical Alignment for Physically-Plausible Multi-Principle Video Generation</a>
-              </h3>
-              <p class="authors">
-                Tahira Kazimi, Shubhankar Borse, Munawar Hayat, Fatih Porikli, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2610.02197" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://hiphy-video.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-30.jpg" alt="RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://ravel-diffusion.github.io/" target="_blank" rel="noopener">RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance</a>
-              </h3>
-              <p class="authors">
-                Kavana Venkatesh, Yusuf Dalva, Ismini Lourentzou, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2412.09614" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://ravel-diffusion.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-31.jpg" alt="Learn Once, Edit Anywhere: Visual Direction Transfer for Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--turq)">ECCV 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://vidit-edit.github.io/" target="_blank" rel="noopener">Learn Once, Edit Anywhere: Visual Direction Transfer for Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Yusuf Dalva, Hidir Yesiltepe, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2403.19645" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://vidit-edit.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-32.jpg" alt="RankT2I: A Submodular Framework for Discovering Interpretable and Diverse Semantics in Text-to-Image Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--turq)">ECCV 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://arxiv.org/abs/2608.14226" target="_blank" rel="noopener">RankT2I: A Submodular Framework for Discovering Interpretable and Diverse Semantics in Text-to-Image Models</a>
-              </h3>
-              <p class="authors">
-                Ritika Allada and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2608.14226" target="_blank" rel="noopener">PDF <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-01.jpg" alt="&#8734;-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://infinity-rope.github.io/" target="_blank" rel="noopener">&#8734;-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout</a>
-              </h3>
-              <p class="authors">
-                Hidir Yesiltepe, Tuna Han Salih Meral, Adil Kaan Akan, Kaan Oktay, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2511.20649" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://infinity-rope.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-02.jpg" alt="Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2026</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://diverse-video.github.io/" target="_blank" rel="noopener">Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization</a>
-              </h3>
-              <p class="authors">
-                Tahira Kazimi, Connor Dunlop, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2511.20647" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://diverse-video.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-03.jpg" alt="LoRAShop: Training-Free Multi-Concept Image Generation and Editing with Rectified Flow Transformers teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2025</span><span class="tag" style="--tc:var(--purple)">Spotlight</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://lorashop.github.io/" target="_blank" rel="noopener">LoRAShop: Training-Free Multi-Concept Image Generation and Editing with Rectified Flow Transformers</a>
-              </h3>
-              <p class="authors">
-                Yusuf Dalva, Hidir Yesiltepe, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2505.23758" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://lorashop.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-04.jpg" alt="Personalized Image Editing in Text-to-Image Diffusion Models via Collaborative Direct Preference Optimization teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://personalized-editing.github.io" target="_blank" rel="noopener">Personalized Image Editing in Text-to-Image Diffusion Models via Collaborative Direct Preference Optimization</a>
-              </h3>
-              <p class="authors">
-                Connor Dunlop, Matthew Zheng, Kavana Venkatesh, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2511.05616" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://personalized-editing.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-05.jpg" alt="CREA: A Collaborative Multi-Agent Framework for Creative Content Generation with Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://crea-diffusion.github.io" target="_blank" rel="noopener">CREA: A Collaborative Multi-Agent Framework for Creative Content Generation with Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Kavana Venkatesh*, Connor Dunlop*, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2504.05306" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://crea-diffusion.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-23.jpg" alt="Dynamic View Synthesis as an Inverse Problem teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://inverse-dvs.github.io/" target="_blank" rel="noopener">Dynamic View Synthesis as an Inverse Problem</a>
-              </h3>
-              <p class="authors">
-                Hidir Yesiltepe and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2506.08004" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://inverse-dvs.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-06.jpg" alt="CLoRA: A Contrastive Approach to Compose Multiple LoRA Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">ICCV 2025</span><span class="tag" style="--tc:var(--purple)">Spotlight</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://clora-diffusion.github.io" target="_blank" rel="noopener">CLoRA: A Contrastive Approach to Compose Multiple LoRA Models</a>
-              </h3>
-              <p class="authors">
-                Tuna Han Salih Meral*, Enis Simsar*, Federico Tombari, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2403.19776" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://clora-diffusion.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-07.jpg" alt="LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">ICCV 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://loraverse-vt.github.io" target="_blank" rel="noopener">LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Mert Sonmezer, Matthew Zheng, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2510.15022" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://loraverse-vt.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-08.jpg" alt="FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://fluxspace.github.io/" target="_blank" rel="noopener">FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers</a>
-              </h3>
-              <p class="authors">
-                Yusuf Dalva, Kavana Venkatesh, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2412.09611" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://fluxspace.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-09.jpg" alt="LoRACLR: Contrastive Adaptation for Customization of Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://loraclr.github.io/" target="_blank" rel="noopener">LoRACLR: Contrastive Adaptation for Customization of Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Enis Simsar, Thomas Hofmann, Federico Tombari, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2412.09622" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://loraclr.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-10.jpg" alt="Explaining in Diffusion: Explaining a Classifier Through Hierarchical Semantics with Text-to-Image Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2025</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://explain-in-diffusion.github.io" target="_blank" rel="noopener">Explaining in Diffusion: Explaining a Classifier Through Hierarchical Semantics with Text-to-Image Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Tahira Kazimi*, Ritika Allada*, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2412.18604" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://explain-in-diffusion.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-12.jpg" alt="Stylebreeder: Exploring and Democratizing Artistic Styles through Text-to-Image Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--pink)">NeurIPS 2024</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://stylebreeder.github.io/" target="_blank" rel="noopener">Stylebreeder: Exploring and Democratizing Artistic Styles through Text-to-Image Models</a>
-              </h3>
-              <p class="authors">
-                Matthew Zheng*, Enis Simsar*, Hidir Yesiltepe, Federico Tombari, Joel Simon, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2406.14599" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://stylebreeder.github.io/" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-13.jpg" alt="NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2024</span><span class="tag" style="--tc:var(--purple)">Oral</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://noiseclr.github.io" target="_blank" rel="noopener">NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Yusuf Dalva, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2312.05390" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://noiseclr.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-14.jpg" alt="CONFORM: Contrast is All You Need For High-Fidelity Text-to-Image Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2024</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://conform-diffusion.github.io" target="_blank" rel="noopener">CONFORM: Contrast is All You Need For High-Fidelity Text-to-Image Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Tuna Han Salih Meral, Enis Simsar, Federico Tombari, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2312.06059" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://conform-diffusion.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-            <article class="card reveal">
-              <img class="pub-teaser" src="images/img-15.jpg" alt="RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models teaser figure" loading="lazy">
-              <div class="card-tags">
-                <span class="tag" style="--tc:var(--purple)">CVPR 2024</span><span class="tag" style="--tc:var(--purple)">Highlight</span>
-              </div>
-              <h3 class="card-title">
-                <a class="card-title-link" href="https://rave-video.github.io" target="_blank" rel="noopener">RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models</a>
-              </h3>
-              <p class="authors">
-                Ozgur Kara*, Bariscan Kurtkaya*, Hidir Yesiltepe, James M. Rehg, and <span class="pi">Pinar Yanardag</span>
-              </p>
-              <div class="card-foot">
-                <a class="link" href="https://arxiv.org/abs/2312.04524" target="_blank" rel="noopener">PDF <i>&#8599;</i></a><a class="link subtle" href="https://rave-video.github.io" target="_blank" rel="noopener">Project <i>&#8599;</i></a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="sec" id="news" style="--accent:var(--purple)">
-        <div class="wrap">
-          <header class="sec-head reveal">
-            <div class="sec-kicker">
-              <span class="n">02</span><span>Latest</span><span class="bar"></span>
-            </div>
-            <h2>
-              News
-            </h2>
-            <p class="sub">
-              Recent milestones from the lab.
-            </p>
-          </header>
-          <div class="timeline reveal">
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--purple)"></span><span class="dnum">Sep 25</span>
-                </div>
-                <span class="dow">2026</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Five papers accepted to NeurIPS 2026.</span>
-                </div>
-              </div>
-            </div>
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--pink)"></span><span class="dnum">Mar 3</span>
-                </div>
-                <span class="dow">2026</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Four papers accepted to CVPR 2026. See an <a href="https://gemlab-vt.github.io/cvpr" target="_blank" rel="noopener" style="color:var(--pink);font-weight:600;text-decoration:underline;text-underline-offset:2px">overview</a> of our CVPR presence.</span>
-                </div>
-              </div>
-            </div>
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--turq)"></span><span class="dnum">Sep 25</span>
-                </div>
-                <span class="dow">2025</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Four papers accepted to NeurIPS 2025, main conference.</span>
-                </div>
-              </div>
-            </div>
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--purple)"></span><span class="dnum">Feb 3</span>
-                </div>
-                <span class="dow">2025</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Three papers accepted to CVPR 2025.</span>
-                </div>
-              </div>
-            </div>
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--pink)"></span><span class="dnum">Apr 3</span>
-                </div>
-                <span class="dow">2024</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Two papers selected as Oral and Highlight at CVPR 2024.</span>
-                </div>
-              </div>
-            </div>
-            <div class="tl-day">
-              <div class="tl-date">
-                <div class="top">
-                  <span class="dot" style="--accent:var(--turq)"></span><span class="dnum">Mar 3</span>
-                </div>
-                <span class="dow">2024</span>
-              </div>
-              <div class="tl-events">
-                <div class="tl-event">
-                  <span class="te-title">Three papers accepted to CVPR 2024.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="sec" id="team" style="--accent:var(--turq)">
-        <div class="wrap">
-          <header class="sec-head reveal">
-            <div class="sec-kicker">
-              <span class="n">03</span><span>The people</span><span class="bar"></span>
-            </div>
-            <h2>
-              Team
-            </h2>
-            <p class="sub">
-              GEMLAB is led by Dr. Pinar Yanardag, with a group of PhD researchers at Virginia Tech.
-            </p>
-          </header>
-          <div class="profiles">
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--pink);--b:var(--purple)">
-                <img src="images/img-16.jpg" alt="" loading="lazy"><span>PY</span>
-              </div>
-              <h3 class="p-name">
-                Pinar Yanardag
-              </h3>
-              <p class="p-role">
-                Principal Investigator
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://pinguar.org/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--purple);--b:var(--pink)">
-                <img src="images/img-17.jpg" alt="" loading="lazy"><span>HY</span>
-              </div>
-              <h3 class="p-name">
-                Hidir Yesiltepe
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://sites.google.com/view/hidir-yesiltepe" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--purple);--b:var(--turq)">
-                <img src="images/img-18.jpg" alt="" loading="lazy"><span>YD</span>
-              </div>
-              <h3 class="p-name">
-                Yusuf Dalva
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://yusufdalva.github.io/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--turq);--b:var(--pink)">
-                <img src="images/img-19.jpg" alt="" loading="lazy"><span>TM</span>
-              </div>
-              <h3 class="p-name">
-                Tuna Han Salih Meral
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://tunahansalih.github.io/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--pink);--b:var(--turq)">
-                <img src="images/img-20.jpg" alt="Kiymet Akdemir" loading="lazy"><span>KA</span>
-              </div>
-              <h3 class="p-name">
-                Kiymet Akdemir
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://x.com/akdemir_kiymet?lang=en" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--turq);--b:var(--purple)">
-                <img src="https://p13n-workshop.github.io/static/img/people/enis_simsar.jpg" alt="Enis Simsar" loading="lazy"><span>ES</span>
-              </div>
-              <h3 class="p-name">
-                Enis Simsar
-              </h3>
-              <p class="p-role">
-                PhD Student &middot; Co-advised at ETH Zurich
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://enis.dev/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--turq);--b:var(--purple)">
-                <img src="images/img-21.jpg" alt="" loading="lazy"><span>TK</span>
-              </div>
-              <h3 class="p-name">
-                Tahira Kazimi
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://tahirakazimi.github.io/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile reveal">
-              <div class="avatar" style="--a:var(--pink);--b:var(--purple)">
-                <img src="images/img-22.jpg" alt="Connor Dunlop" loading="lazy"><span>CD</span>
-              </div>
-              <h3 class="p-name">
-                Connor Dunlop
-              </h3>
-              <p class="p-role">
-                PhD Student
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="https://scholar.google.com/citations?user=PJXB6GAAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Website</a>
-              </div>
-            </article>
-            <article class="profile profile-join reveal">
-              <div class="avatar avatar-gem">
-                <img src="images/gemlab_gem.png" alt="An open spot at GEMLAB" loading="lazy">
-              </div>
-              <h3 class="p-name">
-                Future Gem
-              </h3>
-              <p class="p-role">
-                We&rsquo;re hiring &mdash; PhD &amp; collaborators welcome
-              </p>
-              <div class="p-links">
-                <a class="p-link" href="#connect"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>Contact us</a>
-              </div>
-            </article>
-          </div>
-          <p class="mini-label mt reveal">
-            Alumni
-          </p>
-          <div class="partners reveal">
-            <span class="partner alum">Oguz Kaan Yuksel <em>&rarr;&nbsp;EPFL</em></span><span class="partner alum">Dilara Gokay <em>&rarr;&nbsp;DeepMind</em></span><span class="partner alum">Alara Dirik <em>&rarr;&nbsp;Imperial College London</em></span><span class="partner alum">Umut Kocasari <em>&rarr;&nbsp;TUM</em></span><span class="partner alum">Kerem Zaman <em>&rarr;&nbsp;UNC Chapel Hill</em></span><span class="partner alum">Mert Yuksekgonul <em>&rarr;&nbsp;Stanford</em></span><span class="partner alum">Zehranaz Canfes <em>&rarr;&nbsp;TUM</em></span><span class="partner alum">Furkan Atasoy <em>&rarr;&nbsp;TUM</em></span><span class="partner alum">Berkay Doner <em>&rarr;&nbsp;EPFL</em></span><span class="partner alum">Elif Sema Balcioglu <em>&rarr;&nbsp;EPFL</em></span><span class="partner alum">Eylul Yalcinkaya <em>&rarr;&nbsp;Meta</em></span><span class="partner alum">Cemre Efe Karakas <em>&rarr;&nbsp;Amazon</em></span><span class="partner alum">Merve Rabia Barin <em>&rarr;&nbsp;Purdue</em></span><span class="partner alum">Ezgi Gulperi Er <em>&rarr;&nbsp;Goldman Sachs</em></span><span class="partner alum">Ritika Allada <em>&rarr;&nbsp;US Government</em></span><span class="partner alum">Matthew Zheng <em>&rarr;&nbsp;JP Morgan</em></span>
-          </div>
-        </div>
-      </section>
-      <section class="sec" id="collab" style="--accent:var(--purple)">
-        <div class="wrap">
-          <header class="sec-head reveal">
-            <div class="sec-kicker">
-              <span class="n">04</span><span>Collaborate</span><span class="bar"></span>
-            </div>
-            <h2>
-              Let&rsquo;s collaborate
-            </h2>
-            <p class="sub">
-              We work across industry and academia, and we&rsquo;re always open to new partnerships.
-            </p>
-          </header>
-          <div class="card collab-card reveal" style="--accent:var(--purple)">
-            <p class="collab-lead">
-              GEMLAB partners with leading companies and research labs on generative-AI research, internships, and joint projects. If our work resonates with yours, we&rsquo;d love to hear from you &mdash; just drop us an email.
-            </p>
-            <p class="mini-label">
-              Selected partners &amp; collaborators
-            </p>
-            <div class="partners">
-              <span class="partner">Google Research</span><span class="partner">Adobe Research</span><span class="partner">Snap Inc.</span><span class="partner">Qualcomm</span><span class="partner">fal.ai</span><span class="partner">Deloitte</span><span class="partner">&amp; many more</span>
-            </div>
-            <div class="collab-cta">
-              <a class="btn btn-accent" href="mailto:pinary@vt.edu?subject=Collaboration%20with%20GEMLAB">Email us to collaborate</a><a class="btn btn-ghost" href="https://github.com/gemlab-vt" target="_blank" rel="noopener">See our code <span class="ext">&#8599;</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="sec" id="connect" style="--accent:var(--pink)">
-        <div class="wrap">
-          <header class="sec-head reveal">
-            <div class="sec-kicker">
-              <span class="n">05</span><span>Get in touch</span><span class="bar"></span>
-            </div>
-            <h2>
-              Connect
-            </h2>
-            <p class="sub">
-              Drop us an email or find us on social.
-            </p>
-          </header>
-          <div class="card contact-card reveal" style="--accent:var(--pink)">
-            <div class="contact-grid c4">
-              <div class="c-item">
-                <span class="c-k">Email</span><a class="c-v" href="mailto:pinary@vt.edu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>pinary@vt.edu</a>
-              </div>
-              <div class="c-item">
-                <span class="c-k">GitHub</span><a class="c-v" href="https://github.com/gemlab-vt" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>gemlab-vt <i>&#8599;</i></a>
-              </div>
-              <div class="c-item">
-                <span class="c-k">CVPR 2026</span><a class="c-v" href="https://gemlab-vt.github.io/cvpr" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>Overview <i>&#8599;</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="foot-inner">
-        <div class="foot-brand">
-          <svg class="logo-gem" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gemFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#861f41"/><stop offset="50%" stop-color="#e5751f"/><stop offset="100%" stop-color="#e5751f"/></linearGradient></defs><path d="M8 5h16l5 7-13 16L3 12z" fill="url(#gemFoot)"/><g fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="1" stroke-linejoin="round"><path d="M8 5 6 12l10 16M24 5l2 7-10 16M3 12h26M11 5l-1.5 7M21 5l1.5 7"/></g></svg> GEMLAB <span>Virginia Tech</span>
-        </div>
-        <p class="foot-tag">
-          GEnerative Modeling Lab, Department of Computer Science, Virginia Tech.
-        </p>
-        <a class="back-top" href="#top">Back to top <span>&#8593;</span></a>
+    <div class="stats">
+      <div><b>25+</b><span>Papers since Fall 2023</span></div>
+      <div><b>7</b><span>PhD students</span></div>
+      <div><b>7+</b><span>Industry partners</span></div>
+      <div><b>∞</b><span>Generative ideas</span></div>
+    </div>
+  </header>
+
+  <section id="research">
+    <h2>Research, illustrated.</h2>
+    <p class="sub">Our lab has led 25+ top-conference papers since Fall 2023.</p>
+
+    <div class="featured">
+      <article class="panel">
+        <a href="https://spawn-world.github.io/"><img src="/images/strip-spawn.jpg" alt="A person shows the world model a photo of her dog, and the model projects a world with that dog in it, ready to explore with arrow keys."></a>
+        <h3><a href="https://spawn-world.github.io/">SPAWN</a> <span class="hook">Your concepts, inside interactive worlds.</span></h3>
+        <p class="full"><a href="https://spawn-world.github.io/">From Zero to Hero: Training-Free Custom Concept Spawning in World Models</a></p>
+        <p class="who">Kiymet Akdemir, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2026</span><span class="links"><a href="https://arxiv.org/abs/2606.02575">Paper</a><a href="https://spawn-world.github.io/">Project</a></span></div>
+      </article>
+      <article class="panel">
+        <a href="https://videomla.github.io/"><img src="/images/strip-videomla.jpg" alt="A tired model slumps under a stack of memory boxes while a researcher with a budget clipboard points to a happy model holding one small memory block."></a>
+        <h3><a href="https://videomla.github.io/">VideoMLA</a> <span class="hook">Compact memory for minute-scale video generation.</span></h3>
+        <p class="full"><a href="https://videomla.github.io/">VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion</a></p>
+        <p class="who">Hidir Yesiltepe, Jiazhen Hu, Tuna Han Salih Meral, Adil Kaan Akan, Kaan Oktay, Hoda Eldardiry, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2026</span><span class="links"><a href="https://arxiv.org/abs/2605.30351">Paper</a><a href="https://videomla.github.io/">Project</a></span></div>
+      </article>
+      <article class="panel">
+        <a href="https://adastate.github.io/"><img src="/images/strip-adastate.jpg" alt="A determined model strains forward against a chain fixed to an anchor in the ground."></a>
+        <h3><a href="https://adastate.github.io/">AdaState</a> <span class="hook">Evolving anchors for streaming video.</span></h3>
+        <p class="full"><a href="https://adastate.github.io/">AdaState: Self-Evolving Anchors for Streaming Video Generation</a></p>
+        <p class="who">Yusuf Dalva, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2026</span><span class="links"><a href="https://arxiv.org/abs/2605.30349">Paper</a><a href="https://adastate.github.io/">Project</a></span></div>
+      </article>
+      <article class="panel">
+        <a href="https://hiphy-video.github.io/"><img src="/images/strip-hiphy.jpg" alt="A cheerful model gets a bouncing ball right but fails at a cube floating in water and a sponge dripping water."></a>
+        <h3><a href="https://hiphy-video.github.io/">HiPhy</a> <span class="hook">Getting multiple physics principles right at once.</span></h3>
+        <p class="full"><a href="https://hiphy-video.github.io/">HiPhy: Hierarchical Alignment for Physically-Plausible Multi-Principle Video Generation</a></p>
+        <p class="who">Tahira Kazimi, Shubhankar Borse, Munawar Hayat, Fatih Porikli, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2026</span><span class="links"><a href="https://arxiv.org/abs/2610.02197">Paper</a><a href="https://hiphy-video.github.io/">Project</a></span></div>
+      </article>
+    </div>
+
+    <div class="more">
+      <h3>More research.</h3>
+      <p class="sub">Selected publications, newest first.</p>
+      <ul class="grid">
+      <li>
+        <p class="t"><a href="https://ravel-diffusion.github.io/">RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance</a></p>
+        <p class="who">Kavana Venkatesh, Yusuf Dalva, Ismini Lourentzou, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2026</span><span class="links"><a href="https://arxiv.org/abs/2412.09614">Paper</a><a href="https://ravel-diffusion.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://vidit-edit.github.io/">Learn Once, Edit Anywhere: Visual Direction Transfer for Diffusion Models</a></p>
+        <p class="who">Yusuf Dalva, Hidir Yesiltepe, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">ECCV 2026</span><span class="links"><a href="https://arxiv.org/abs/2403.19645">Paper</a><a href="https://vidit-edit.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://arxiv.org/abs/2608.14226">RankT2I: A Submodular Framework for Discovering Interpretable and Diverse Semantics in Text-to-Image Models</a></p>
+        <p class="who">Ritika Allada, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">ECCV 2026</span><span class="links"><a href="https://arxiv.org/abs/2608.14226">Paper</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://infinity-rope.github.io/">∞-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout</a></p>
+        <p class="who">Hidir Yesiltepe, Tuna Han Salih Meral, Adil Kaan Akan, Kaan Oktay, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2026</span><span class="links"><a href="https://arxiv.org/abs/2511.20649">Paper</a><a href="https://infinity-rope.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://diverse-video.github.io/">Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization</a></p>
+        <p class="who">Tahira Kazimi, Connor Dunlop, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2026</span><span class="links"><a href="https://arxiv.org/abs/2511.20647">Paper</a><a href="https://diverse-video.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://lorashop.github.io/">LoRAShop: Training-Free Multi-Concept Image Generation and Editing with Rectified Flow Transformers</a></p>
+        <p class="who">Yusuf Dalva, Hidir Yesiltepe, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2025, Spotlight</span><span class="links"><a href="https://arxiv.org/abs/2505.23758">Paper</a><a href="https://lorashop.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://personalized-editing.github.io">Personalized Image Editing in Text-to-Image Diffusion Models via Collaborative Direct Preference Optimization</a></p>
+        <p class="who">Connor Dunlop, Matthew Zheng, Kavana Venkatesh, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2025</span><span class="links"><a href="https://arxiv.org/abs/2511.05616">Paper</a><a href="https://personalized-editing.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://crea-diffusion.github.io">CREA: A Collaborative Multi-Agent Framework for Creative Content Generation with Diffusion Models</a></p>
+        <p class="who">Kavana Venkatesh*, Connor Dunlop*, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2025</span><span class="links"><a href="https://arxiv.org/abs/2504.05306">Paper</a><a href="https://crea-diffusion.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://inverse-dvs.github.io/">Dynamic View Synthesis as an Inverse Problem</a></p>
+        <p class="who">Hidir Yesiltepe, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2025</span><span class="links"><a href="https://arxiv.org/abs/2506.08004">Paper</a><a href="https://inverse-dvs.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://clora-diffusion.github.io">CLoRA: A Contrastive Approach to Compose Multiple LoRA Models</a></p>
+        <p class="who">Tuna Han Salih Meral*, Enis Simsar*, Federico Tombari, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">ICCV 2025, Spotlight</span><span class="links"><a href="https://arxiv.org/abs/2403.19776">Paper</a><a href="https://clora-diffusion.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://loraverse-vt.github.io">LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models</a></p>
+        <p class="who">Mert Sonmezer, Matthew Zheng, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">ICCV 2025</span><span class="links"><a href="https://arxiv.org/abs/2510.15022">Paper</a><a href="https://loraverse-vt.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://fluxspace.github.io/">FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers</a></p>
+        <p class="who">Yusuf Dalva, Kavana Venkatesh, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2025</span><span class="links"><a href="https://arxiv.org/abs/2412.09611">Paper</a><a href="https://fluxspace.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://loraclr.github.io/">LoRACLR: Contrastive Adaptation for Customization of Diffusion Models</a></p>
+        <p class="who">Enis Simsar, Thomas Hofmann, Federico Tombari, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2025</span><span class="links"><a href="https://arxiv.org/abs/2412.09622">Paper</a><a href="https://loraclr.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://explain-in-diffusion.github.io">Explaining in Diffusion: Explaining a Classifier Through Hierarchical Semantics with Text-to-Image Diffusion Models</a></p>
+        <p class="who">Tahira Kazimi*, Ritika Allada*, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2025</span><span class="links"><a href="https://arxiv.org/abs/2412.18604">Paper</a><a href="https://explain-in-diffusion.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://stylebreeder.github.io/">Stylebreeder: Exploring and Democratizing Artistic Styles through Text-to-Image Models</a></p>
+        <p class="who">Matthew Zheng*, Enis Simsar*, Hidir Yesiltepe, Federico Tombari, Joel Simon, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">NeurIPS 2024</span><span class="links"><a href="https://arxiv.org/abs/2406.14599">Paper</a><a href="https://stylebreeder.github.io/">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://noiseclr.github.io">NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models</a></p>
+        <p class="who">Yusuf Dalva, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2024, Oral</span><span class="links"><a href="https://arxiv.org/abs/2312.05390">Paper</a><a href="https://noiseclr.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://conform-diffusion.github.io">CONFORM: Contrast is All You Need For High-Fidelity Text-to-Image Diffusion Models</a></p>
+        <p class="who">Tuna Han Salih Meral, Enis Simsar, Federico Tombari, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2024</span><span class="links"><a href="https://arxiv.org/abs/2312.06059">Paper</a><a href="https://conform-diffusion.github.io">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://rave-video.github.io">RAVE: Randomized Noise Shuffling for Fast and Consistent Video Editing with Diffusion Models</a></p>
+        <p class="who">Ozgur Kara*, Bariscan Kurtkaya*, Hidir Yesiltepe, James M. Rehg, Pinar Yanardag</p>
+        <div class="meta"><span class="venue">CVPR 2024, Highlight</span><span class="links"><a href="https://arxiv.org/abs/2312.04524">Paper</a><a href="https://rave-video.github.io">Project</a></span></div>
+      </li>
+      </ul>
+    </div>
+
+    <div class="more">
+      <h3>Selected collaborations.</h3>
+      <p class="sub">Projects led by our collaborators.</p>
+      <ul class="grid">
+      <li>
+        <p class="t"><a href="https://snap-research.github.io/canvas-to-image">Canvas-to-Image: Compositional Image Generation with Multimodal Controls</a></p>
+        <p class="who">Yusuf Dalva*, Gordon Guocheng Qian*, Maya Goldenberg, Tsai-Shien Chen, Kfir Aberman, Sergey Tulyakov, Pinar Yanardag, Kuan-Chieh Jackson Wang</p>
+        <div class="meta"><span class="venue">SIGGRAPH 2026</span><span class="links"><a href="https://arxiv.org/abs/2511.21691">Paper</a><a href="https://snap-research.github.io/canvas-to-image">Project</a></span></div>
+      </li>
+      <li>
+        <p class="t"><a href="https://arxiv.org/abs/2502.04320">ConceptAttention: Diffusion Transformers Learn Highly Interpretable Features</a></p>
+        <p class="who">Alec Helbling, Tuna Han Salih Meral, Benjamin Hoover, Pinar Yanardag, Duen Horng Chau</p>
+        <div class="meta"><span class="venue">ICML 2025</span><span class="links"><a href="https://arxiv.org/abs/2502.04320">Paper</a><a href="https://github.com/helblazer811/ConceptAttention">Project</a></span></div>
+      </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>News</h2>
+    <p class="sub">Recent milestones from the lab.</p>
+    <ul class="news">
+      <li><time>Sep 25, 2026</time><span>Five papers accepted to NeurIPS 2026.</span></li>
+      <li><time>Mar 3, 2026</time><span>Four papers accepted to CVPR 2026. See an <a class="quiet" href="/cvpr/">overview</a> of our CVPR presence.</span></li>
+      <li><time>Sep 25, 2025</time><span>Four papers accepted to NeurIPS 2025, main conference.</span></li>
+      <li><time>Feb 3, 2025</time><span>Three papers accepted to CVPR 2025.</span></li>
+      <li><time>Apr 3, 2024</time><span>Two papers selected as Oral and Highlight at CVPR 2024.</span></li>
+      <li><time>Mar 3, 2024</time><span>Three papers accepted to CVPR 2024.</span></li>
+    </ul>
+  </section>
+
+  <section id="team">
+    <h2>Team</h2>
+    <p class="sub">GEM Lab is led by Dr. Pinar Yanardag, with a group of PhD researchers at Virginia Tech.</p>
+    <ul class="team">
+      <li><img class="ini photo" src="/images/pinar-yanardag.jpg" alt=""><div><p class="n"><a href="https://pinguar.org/">Pinar Yanardag</a></p><p class="r">Principal Investigator</p></div></li>
+      <li><img class="ini photo" src="/images/hidir-yesiltepe.jpg" alt=""><div><p class="n"><a href="https://sites.google.com/view/hidir-yesiltepe">Hidir Yesiltepe</a></p><p class="r">PhD Student</p></div></li>
+      <li><img class="ini photo" src="/images/yusuf-dalva.jpg" alt=""><div><p class="n"><a href="https://yusufdalva.github.io/">Yusuf Dalva</a></p><p class="r">PhD Student</p></div></li>
+      <li><img class="ini photo" src="/images/tuna-meral.jpg" alt=""><div><p class="n"><a href="https://tunahansalih.github.io/">Tuna Han Salih Meral</a></p><p class="r">PhD Student</p></div></li>
+      <li><img class="ini photo" src="/images/kiymet-akdemir.jpg" alt=""><div><p class="n"><a href="https://x.com/akdemir_kiymet?lang=en">Kiymet Akdemir</a></p><p class="r">PhD Student</p></div></li>
+      <li><img class="ini photo" src="/images/enis-simsar.jpg" alt=""><div><p class="n"><a href="https://enis.dev/">Enis Simsar</a></p><p class="r">PhD Student, co-advised at ETH Zurich</p></div></li>
+      <li><img class="ini photo" src="/images/tahira-kazimi.jpg" alt=""><div><p class="n"><a href="https://tahirakazimi.github.io/">Tahira Kazimi</a></p><p class="r">PhD Student</p></div></li>
+      <li><img class="ini photo" src="/images/connor-dunlop.jpg" alt=""><div><p class="n"><a href="https://scholar.google.com/citations?user=PJXB6GAAAAAJ&hl=en">Connor Dunlop</a></p><p class="r">PhD Student</p></div></li>
+      <li class="open"><img class="gem-bird" src="/images/future-gem-bird.png" alt=""><div><p class="n">Future Gem</p><p class="r">We’re hiring. PhD students and collaborators welcome. <a class="quiet" href="#connect">Contact us</a></p></div></li>
+    </ul>
+    <h3 class="alumni-h">Alumni</h3>
+    <ul class="alumni">
+      <li>Oguz Kaan Yuksel <span>EPFL</span></li>
+      <li>Dilara Gokay <span>DeepMind</span></li>
+      <li>Alara Dirik <span>Imperial College London</span></li>
+      <li>Umut Kocasari <span>TUM</span></li>
+      <li>Kerem Zaman <span>UNC Chapel Hill</span></li>
+      <li>Mert Yuksekgonul <span>Stanford</span></li>
+      <li>Zehranaz Canfes <span>TUM</span></li>
+      <li>Furkan Atasoy <span>TUM</span></li>
+      <li>Berkay Doner <span>EPFL</span></li>
+      <li>Elif Sema Balcioglu <span>EPFL</span></li>
+      <li>Eylul Yalcinkaya <span>Meta</span></li>
+      <li>Cemre Efe Karakas <span>Amazon</span></li>
+      <li>Merve Rabia Barin <span>Purdue</span></li>
+      <li>Ezgi Gulperi Er <span>Goldman Sachs</span></li>
+      <li>Ritika Allada <span>US Government</span></li>
+      <li>Matthew Zheng <span>JP Morgan</span></li>
+    </ul>
+    <div class="before">
+      <img src="/images/catlab-cat.png" alt="CATLAB cat doodle">
+      <p>Before Virginia Tech, our group was <a class="quiet" href="https://catlab-team.github.io/">CATLAB at Boğaziçi University</a>. Visit the site to see our earlier research on GAN controllability and interpretability.</p>
+    </div>
+  </section>
+
+  <section id="collab">
+    <div class="two">
+      <div>
+        <h2>Let’s collaborate</h2>
+        <p class="sub">We work across industry and academia, and we’re always open to new partnerships.</p>
+        <p>GEM Lab partners with leading companies and research labs on generative-AI research, internships, and joint projects. If our work resonates with yours, we’d love to hear from you.</p>
+        <ul class="partners"><li>NSF</li><li>Google Research</li><li>Adobe Research</li><li>Snap Inc.</li><li>Qualcomm Research</li><li>fal.ai</li><li>Deloitte</li></ul>
+        <p style="margin-top:22px"><a class="quiet" href="mailto:pinary@vt.edu">Email us to collaborate</a></p>
       </div>
-    </footer>
-    <script src="script.js" defer></script>
-  </body>
+      <div id="connect">
+        <h2>Connect</h2>
+        <p class="sub">Drop us an email or find us on social.</p>
+        <ul class="contact">
+          <li><span>Email</span><a class="quiet" href="mailto:pinary@vt.edu">pinary@vt.edu</a></li>
+          <li><span>GitHub</span><a class="quiet" href="https://github.com/gemlab-vt">gemlab-vt</a></li>
+          <li><span>NeurIPS</span><a class="quiet" href="/neurips/">Our papers at NeurIPS’26</a></li>
+          <li><span>CVPR</span><a class="quiet" href="/cvpr/">Our papers at CVPR’26</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>GEM Lab, Department of Computer Science, Virginia Tech</span>
+    <a href="#">Back to top</a>
+  </footer>
+
+</div>
+</body>
 </html>

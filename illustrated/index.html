@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research, illustrated — GEM Lab, Virginia Tech</title>
+<meta name="description" content="Every GEM Lab paper as a one-panel visual abstract.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff; --ink: #17171a; --ink-2: #4a4a50; --muted: #8a8a90; --rule: #e7e7ea; --soft: #f4f4f6;
+    --accent: #0f8b8d; --panel-bg: #ffffff; --panel-filter: none;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141416; --ink: #ececee; --ink-2: #b9b9bf; --muted: #7e7e86; --rule: #2a2a2f; --soft: #1d1d21;
+      --accent: #4fb8ba; --panel-bg: #f3f3f1; --panel-filter: brightness(.94);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #141416; --ink: #ececee; --ink-2: #b9b9bf; --muted: #7e7e86; --rule: #2a2a2f; --soft: #1d1d21;
+    --accent: #4fb8ba; --panel-bg: #f3f3f1; --panel-filter: brightness(.94);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  p { margin: 0; }
+  h1, h2, h3 { font-family: "Newsreader", Georgia, "Times New Roman", serif; font-weight: 400; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 24px 0 20px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: "Newsreader", Georgia, serif; font-size: 23px; font-weight: 500; letter-spacing: -.01em; }
+  .brand img { height: 26px; width: auto; }
+  .brand small { font-family: "Inter", system-ui, sans-serif; font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 26px; }
+  nav li a { font-size: 14px; color: var(--ink-2); }
+  nav li a:hover, nav li a[aria-current] { color: var(--ink); }
+  nav li a[aria-current] { border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
+  header { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: clamp(36px, 5.5vw, 60px); line-height: 1.04; letter-spacing: -.02em; margin: 0 0 18px; }
+  .lede { font-family: "Newsreader", Georgia, serif; font-size: 20px; line-height: 1.45; color: var(--ink-2); max-width: 54ch; }
+  .lede a, .quiet { color: var(--ink); border-bottom: 1px solid var(--rule); }
+  .lede a:hover, .quiet:hover { color: var(--accent); border-color: var(--accent); }
+  .themes { display: flex; gap: 22px; margin-top: 26px; font-size: 13.5px; color: var(--muted); flex-wrap: wrap; }
+  .themes span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--rule); margin-right: 8px; vertical-align: 1px; }
+
+  .strips { list-style: none; margin: 0; padding: 0; }
+  .strip { padding: 56px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 280px; gap: 32px 48px; align-items: start; }
+  .strip figure { margin: 0; grid-column: 1 / -1; }
+  .strip img { display: block; width: 100%; height: auto; background: var(--panel-bg); border: 1px solid var(--rule); border-radius: 3px; filter: var(--panel-filter); }
+  .strip figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .strip h2 { font-size: 30px; font-weight: 500; letter-spacing: -.015em; line-height: 1.2; margin: 0 0 6px; }
+  .strip h2 a:hover { color: var(--accent); }
+  .strip .hook { font-family: "Newsreader", Georgia, serif; font-size: 20px; color: var(--ink-2); margin-bottom: 14px; }
+  .strip .full { font-size: 14.5px; color: var(--ink-2); line-height: 1.45; margin-bottom: 10px; }
+  .strip .who { font-size: 13.5px; color: var(--muted); }
+  .side { font-size: 13.5px; color: var(--ink-2); display: grid; gap: 6px; padding-top: 10px; }
+  .side .tag { color: var(--muted); }
+  .side .tag b { font-weight: 500; color: var(--ink-2); }
+  .side .links { display: flex; gap: 14px; margin-top: 6px; }
+  .side .links a { border-bottom: 1px solid var(--rule); }
+  .side .links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .note { padding: 40px 0 0; color: var(--muted); font-size: 14px; max-width: 60ch; }
+  footer { margin-top: 48px; border-top: 1px solid var(--rule); padding: 28px 0 48px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+  footer a { color: var(--ink-2); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+    nav { flex-direction: column; gap: 14px; align-items: flex-start; }
+    nav ul { gap: 18px; flex-wrap: wrap; }
+    header { padding: 40px 0 32px; }
+    .lede { font-size: 18px; }
+    .strip { grid-template-columns: 1fr; padding: 40px 0; gap: 20px; }
+    .strip h2 { font-size: 26px; }
+    .side { padding-top: 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) { a { transition: color .15s ease, border-color .15s ease; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="/">GEM Lab<small>Virginia Tech</small></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#" aria-current="page">Illustrated</a></li>
+      <li><a href="https://github.com/gemlab-vt">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Research, illustrated.</h1>
+    <p class="lede">Every paper from the lab as a one-panel visual abstract: what the model used to do, what it does now, and why that matters. The <a href="/">homepage</a> shows the quiet versions; these are the full strips, dialogue included.</p>
+    <div class="themes"><span>Control</span><span>Efficiency</span><span>Personalization</span><span>Since 2026</span></div>
+  </header>
+
+  <ul class="strips">
+    <li class="strip" id="spawn">
+      <figure>
+        <a href="https://spawn-world.github.io/"><img src="/images/strip-spawn.jpg" alt="Illustrated abstract for SPAWN"></a>
+        <figcaption>A user asks for their cat; the world model, left to its priors, offers a tree. SPAWN lets the concept you choose appear in the generated world, and persist as you move through it.</figcaption>
+      </figure>
+      <div>
+        <h2><a href="https://spawn-world.github.io/">SPAWN</a></h2>
+        <p class="hook">Your concepts, inside interactive worlds.</p>
+        <p class="full">From Zero to Hero: Training-Free Custom Concept Spawning in World Models</p>
+        <p class="who">Kiymet Akdemir, Pinar Yanardag</p>
+      </div>
+      <div class="side">
+        <span class="tag">Venue <b>NeurIPS 2026</b></span>
+        <span class="tag">Theme <b>Personalization</b></span>
+        <span class="links"><a href="https://arxiv.org/abs/2606.02575">Paper</a><a href="https://spawn-world.github.io/">Project</a></span>
+      </div>
+    </li>
+    <li class="strip" id="videomla">
+      <figure>
+        <a href="https://videomla.github.io/"><img src="/images/strip-videomla.jpg" alt="Illustrated abstract for VideoMLA"></a>
+        <figcaption>The KV cache grows with every second of video. VideoMLA keeps the same memories in a low-rank latent, so a minute-long rollout travels light.</figcaption>
+      </figure>
+      <div>
+        <h2><a href="https://videomla.github.io/">VideoMLA</a></h2>
+        <p class="hook">Compact memory for minute-scale video generation.</p>
+        <p class="full">VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion</p>
+        <p class="who">Hidir Yesiltepe, Jiazhen Hu, Tuna Han Salih Meral, Adil Kaan Akan, Kaan Oktay, Hoda Eldardiry, Pinar Yanardag</p>
+      </div>
+      <div class="side">
+        <span class="tag">Venue <b>NeurIPS 2026</b></span>
+        <span class="tag">Theme <b>Efficiency</b></span>
+        <span class="links"><a href="https://arxiv.org/abs/2605.30351">Paper</a><a href="https://videomla.github.io/">Project</a></span>
+      </div>
+    </li>
+    <li class="strip" id="adastate">
+      <figure>
+        <a href="https://adastate.github.io/"><img src="/images/strip-adastate.jpg" alt="Illustrated abstract for AdaState"></a>
+        <figcaption>Streaming models stay chained to the first frame, which freezes the scene. AdaState replaces that anchor with a hidden state the model updates as it goes, so the video can actually move.</figcaption>
+      </figure>
+      <div>
+        <h2><a href="https://adastate.github.io/">AdaState</a></h2>
+        <p class="hook">Evolving anchors for streaming video.</p>
+        <p class="full">AdaState: Self-Evolving Anchors for Streaming Video Generation</p>
+        <p class="who">Yusuf Dalva, Pinar Yanardag</p>
+      </div>
+      <div class="side">
+        <span class="tag">Venue <b>NeurIPS 2026</b></span>
+        <span class="tag">Theme <b>Control</b></span>
+        <span class="links"><a href="https://arxiv.org/abs/2605.30349">Paper</a><a href="https://adastate.github.io/">Project</a></span>
+      </div>
+    </li>
+    <li class="strip" id="hiphy">
+      <figure>
+        <a href="https://hiphy-video.github.io/"><img src="/images/strip-hiphy.jpg" alt="Illustrated abstract for HiPhy"></a>
+        <figcaption>One law of physics at a time is easy. HiPhy rewards each principle stage by stage and the whole scene for coherence, so buoyancy, fluids and impacts unfold together.</figcaption>
+      </figure>
+      <div>
+        <h2><a href="https://hiphy-video.github.io/">HiPhy</a></h2>
+        <p class="hook">Getting multiple physics principles right at once.</p>
+        <p class="full">HiPhy: Hierarchical Alignment for Physically-Plausible Multi-Principle Video Generation</p>
+        <p class="who">Tahira Kazimi, Shubhankar Borse, Munawar Hayat, Fatih Porikli, Pinar Yanardag</p>
+      </div>
+      <div class="side">
+        <span class="tag">Venue <b>NeurIPS 2026</b></span>
+        <span class="tag">Theme <b>Control</b></span>
+        <span class="links"><a href="https://arxiv.org/abs/2610.02197">Paper</a><a href="https://hiphy-video.github.io/">Project</a></span>
+      </div>
+    </li>
+  </ul>
+
+  <footer>
+    <span>GEM Lab, Department of Computer Science, Virginia Tech</span>
+    <a href="/">Back to the lab</a>
+  </footer>
+
+</div>
+</body>
+</html>
