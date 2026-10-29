@@ -104,7 +104,7 @@
   .team li { display: flex; gap: 14px; align-items: flex-start; }
   .ini { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--soft); border: 1px solid var(--rule); display: grid; place-items: center; font-family: "Newsreader", Georgia, serif; font-size: 17px; color: var(--ink-2); }
   .gem-bird { flex: none; width: 64px; height: 64px; object-fit: contain; filter: var(--panel-filter); margin: -6px 0 0 -4px; }
-  .ini.photo { object-fit: cover; filter: grayscale(.5); opacity: .9; width: 56px; height: 56px; }
+  .ini.photo { object-fit: cover; filter: grayscale(.5); opacity: .9; width: 70px; height: 70px; }
   .team li:hover .ini.photo { filter: none; opacity: 1; }
   .ini img { height: 24px; width: auto; }
   .team .n { font-family: "Newsreader", Georgia, serif; font-size: 19px; font-weight: 500; line-height: 1.2; }
